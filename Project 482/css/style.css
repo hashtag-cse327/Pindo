@@ -213,3 +213,13 @@ header img {
 .zoom:hover {
   transform: scale(1.5); /* (200% zoom  */
 }
+
+.searchbar{
+  position: fixed;
+  top: 13%;
+  left: 40%;
+}
+
+.s-form{
+  width: 100%;
+}

@@ -10,6 +10,7 @@
 
     <!-- Style CSS -->
     <link rel="stylesheet" type="text/css" href="css/style.css">
+
 </head>
 <body>
 	<!--Header Starts -->
@@ -62,6 +63,10 @@
 
 	</header>
   	<!--Header Ends -->
+
+  	<script type="text/javascript">
+ 	 	document.getElementById("demo1").innerHTML = Date();
+ 	 </script>
 
   	<!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->

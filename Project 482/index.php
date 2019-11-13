@@ -55,7 +55,7 @@
  	 				<li><a href="#">Cart</a></li>
  	 				<li><a href="#">Offers</a></li>
  	 				<li><a href="#">History</a></li>
- 	 				<li><a href="#">Login</a></li>
+ 	 				<li><a href="login.php">Login</a></li>
  	 			</ul>
  	 		</div>
  	 	</div>
@@ -168,14 +168,6 @@
  	 <!-- Main Contents Ends -->
 
  	 <?php include("footer.php") ?>
-  
-
-
-
-
- 	 <script type="text/javascript">
- 	 	document.getElementById("demo1").innerHTML = Date();
- 	 </script>
 
 
   	
