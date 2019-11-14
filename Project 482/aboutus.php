@@ -2,7 +2,9 @@
 
 <!DOCTYPE html>
 <html lang="en">
-
+  <head>
+    <title>Pindo | About Us</title>
+  </head>
   <body>
 
     <div class="parallax">
@@ -94,10 +96,6 @@
       </div>
 
      <?php include("footer.php") ?>
-
-      <script type="text/javascript">
-        document.getElementById("demo1").innerHTML = Date();
-      </script>
   </body>
 
 </html>
