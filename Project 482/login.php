@@ -6,7 +6,7 @@
 	<link rel="stylesheet" type="text/css" href="css/logi.css">
 
     <!-- Form Validation JS -->
-    <script type="text/javascript" src="js/form_validation.js"></script>
+    <script type="text/javascript" src="js/form_validationn.js"></script>
 </head>
 <body>
 	<div class="container login-container">

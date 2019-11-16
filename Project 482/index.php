@@ -1,4 +1,6 @@
 <?php include("header.php"); ?>
+<?php include("sidebar.php"); ?>
+
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -42,34 +44,6 @@
 
  	 <!--Slideshow Ends -->
 
- 	 <!-- SideBar Starts -->
-
- 	 <div class="sidebar">
- 	 	<h3>Profile</h3>
-
- 	 	<img src="images/profile.png">
-
- 	 	<div class="container">
- 	 		<div class="profile">
- 	 			<ul>
- 	 				<li><a href="#">Cart</a></li>
- 	 				<li><a href="#">Offers</a></li>
- 	 				<li><a href="#">History</a></li>
- 	 				<li><a href="login.php">Login</a></li>
- 	 			</ul>
- 	 		</div>
- 	 	</div>
-
- 	 </div>
-
- 	 <!-- SideBar Ends -->
-
- 	 <!-- SideBar 2 Starts -->
- 	 <div class="sidebar2">
- 	 	<img src="images/side.jpg">
- 	 </div>
-
- 	 <!-- SideBar 2 Ends -->
 
  	 <!-- Main Contents -->
 

@@ -9,7 +9,7 @@
     <link rel="stylesheet" href="css/bootstrap.css">
 
     <!-- Style CSS -->
-    <link rel="stylesheet" type="text/css" href="css/style.css">
+    <link rel="stylesheet" type="text/css" href="css/stylee.css">
 
 </head>
 <body>
