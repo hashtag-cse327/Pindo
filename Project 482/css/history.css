@@ -1,0 +1,39 @@
+body{
+	/* The image used */
+  background-image: url("https://cdn.pixabay.com/photo/2017/12/26/09/15/woman-3040029_1280.jpg");
+
+  /* Set a specific height */
+  height: 100%; 
+
+  /* Create the parallax scrolling effect */
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+table{
+	margin:0px 150px;
+	text-align: center;
+	font-weight: 900;
+	width: 80%;
+	background: #343a4087;
+}
+
+table img{
+	margin-top: 5px;
+	width: 100px;
+	height: 100px;
+}
+
+span{
+	display: inline-block;
+	background: grey;
+	width: 100%;
+	height: 1px;
+}
+
+.drop-shadow1{
+	padding: 20px;
+	box-shadow:5px 5px #e9ecef5c;
+}
