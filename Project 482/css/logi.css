@@ -55,7 +55,7 @@ h1{
 .btnSubmit{
     font-weight: 600;
     width: 30%;
-    color: var(--white);
+    color: white;
     background-color: #e05614;
     border: none;
     border-radius: 1.5rem;
@@ -63,7 +63,7 @@ h1{
 }
 
 .btnSubmit:hover{
-	width: 31%;
+	font-size: 18px;
 	font-weight: 900;
 	background: #e05614b8;	
 }

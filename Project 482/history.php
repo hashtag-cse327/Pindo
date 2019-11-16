@@ -9,8 +9,8 @@
 
 <body >
 	
-	<h2 style="text-align: center; margin-top: 150px;">History</h2>
-	<span></span>
+	<h1 style="text-align: center; margin-top: 150px;">History</h1>
+	<hr>
 
 	<section>
 		<table>
@@ -48,29 +48,7 @@
 			</tr>
 			
 			
-			<tr class="drop-shadow1">
-				<td style="text-align: center;"><img src="images/demo.jpg"></td>
-				<td>Shirt</td>
-				<td>2</td>
-				<td>300tk</td>
-				<th>01-01-2019</th>
-			</tr>
 			
-			<tr class="drop-shadow1">
-				<td style="text-align: center;"><img src="images/demo.jpg"></td>
-				<td>Shirt</td>
-				<td>2</td>
-				<td>300tk</td>
-				<th>01-01-2019</th>
-			
-			<tr class="drop-shadow1">
-				<td style="text-align: center;"><img src="images/demo.jpg"></td>
-				<td>Shirt</td>
-				<td>2</td>
-				<td>300tk</td>
-				<th>01-01-2019</th>
-			</tr>
-
 		</table>
 	</section>
 

@@ -3,7 +3,7 @@
 
 <head>
 	<title>Product</title>
-	<link rel="stylesheet" type="text/css" href="css/product.css">
+	<link rel="stylesheet" type="text/css" href="css/productt.css">
 </head>
 
 <body>

@@ -8,8 +8,11 @@
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="css/bootstrap.css">
 
+    <!-- FontAwesome -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.1/css/all.css" integrity="sha384-gfdkjb5BdAXd+lj+gudLWI+BXq4IuLW5IT+brZEZsLFm++aCMlF1V92rMkPaX4PP" crossorigin="anonymous">
+
     <!-- Style CSS -->
-    <link rel="stylesheet" type="text/css" href="css/stylee.css">
+    <link rel="stylesheet" type="text/css" href="css/style.css">
 
 </head>
 <body>
@@ -51,6 +54,9 @@
 	            			<div class="dropdown-divider"></div>
 	            			<a class="dropdown-item" href="#latst">Latest Collection</a>
 	          			</div>
+	        		</li>
+	        		<li class="nav-item">
+	        			<a  class="nav-link" href="login.php">Login</a>
 	        		</li>
 	      		</ul>
 	      

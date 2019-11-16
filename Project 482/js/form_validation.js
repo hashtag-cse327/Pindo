@@ -24,6 +24,10 @@ function signup_validate(){
   	}
 
   	var p1 = document.forms["signup_form"]["password1"].value;
+  	if(p1==""){
+		alert("Please enter password!");
+		return false;
+	}
   	var p2 = document.forms["signup_form"]["password2"].value;
   	if(p1 == p2){
 
@@ -36,8 +40,12 @@ function signup_validate(){
 
 function signin_validate(){
 	var x = document.forms["signin_form"]["ur_name"].value;
+	if(x==""){
+		alert("Username or Password field must be empty!");
+		return false;
+	}
 	var y = document.forms["signin_form"]["password"].value;
-	if(x=="" && y==""){
+	if(y==""){
 		alert("Username or Password field must be empty!");
 		return false;
 	}
