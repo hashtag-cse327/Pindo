@@ -1,5 +1,11 @@
 <?php include ("header.php") ?>
-<?php include ("sidebar.php") ?>
+<?php 
+	if (isset($_POST["ur_name"])==""){
+	} 
+	else {
+	  include("sidebar.php");
+	}
+?>
 
 <head>
 	<title>Product</title>
@@ -19,7 +25,7 @@
 				<span>brand name</span><br>
 				<span>product id</span><br>
 				<span>Quantity: </span>
-				<input type="number" style="width: 10%;" name="quantity"><br>
+				<input type="number" style="width: 5%;" name="quantity" value="1"><br>
 				<button type= "submit" class = "btnSubmit">Add to cart</button>
 				<button type= "submit" class = "btnSubmit1">Buy Now</button>
 			</div>

@@ -1,5 +1,11 @@
 <?php include("header.php") ?>
-<?php include("sidebar.php") ?>
+<?php 
+	if (isset($_POST["ur_name"])==""){
+	} 
+	else {
+	  include("sidebar.php");
+	}
+?>
 
 <head>
 	<title>History</title>

@@ -56,7 +56,16 @@
 	          			</div>
 	        		</li>
 	        		<li class="nav-item">
-	        			<a  class="nav-link" href="login.php">Login</a>
+	        			<?php 
+	        				if (isset($_POST["ur_name"])==""){
+	        			 ?>
+	        					<a  class="nav-link" href="login.php">Login</a>
+	        			<?php 
+	        			}
+	        			else { ?>
+	        				<a  class="nav-link" href="#">Welcome, <?php echo $_POST["ur_name"] ?>! </a>
+	        			<?php } ?>
+
 	        		</li>
 	      		</ul>
 	      

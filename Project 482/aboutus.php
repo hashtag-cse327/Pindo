@@ -1,5 +1,11 @@
 <?php include("header.php") ?>
-<?php include("sidebar.php") ?>
+<?php 
+  if (isset($_POST["ur_name"])==""){
+  } 
+  else {
+    include("sidebar.php");
+  }
+?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -12,7 +18,7 @@
       <div class="container-fluid">
         <!--About Section Starts -->
           <div class="about">
-            <div class="container-fluid" style="background-color: #d1450ab0; color: white;">
+            <div class="container-fluid" style="background-color: #d1450ab0; color: white;height: 100vh;">
               <div class="shadow-lg p-3 mb-5 bg-dark rounded" style="text-align: center;" ><h1>ABOUT US</h1></div>
            
                <div class="container" style="margin-bottom: 0 !important;">
