@@ -58,8 +58,23 @@
 	            		Catagory
 	          			</a>
 	          			<div class="dropdown-menu" aria-labelledby="navbarDropdown">
-	            			<a class="dropdown-item" href="#men" style="scroll-behavior: smooth;">Men's Collection</a>
-	            			<a class="dropdown-item" href="#women" style="scroll-behavior: smooth;">Women's Collection</a>
+	            			<div class="dropdownn">
+							  <button class="dropbtn" onmouseover="arrow()" onmouseout="noarrow()" id="men" >Men's Collection </button>
+							  <div class="dropdown-content">
+							    <a href="#">Shirts/T-Shirts</a>
+							    <a href="#">Pants/Trousers</a>
+							    <a href="#">Shoes/Sandals</a>
+							  </div>
+							</div>
+							<div class="dropdown-divider"></div>
+	            			<div class="dropdownn">
+							  <button class="dropbtn" onmouseover="arrow1()" onmouseout="noarrow1()" id="wmen">Women's Collection</button>
+							  <div class="dropdown-content">
+							    <a href="#">Wedding Wear</a>
+							    <a href="#">Sarees</a>
+							    <a href="#">Sandals</a>
+							  </div>
+							</div>
 	            			<div class="dropdown-divider"></div>
 	            			<a class="dropdown-item" href="#latst">Latest Collection</a>
 	          			</div>
@@ -90,6 +105,23 @@
 
   	<script type="text/javascript">
  	 	document.getElementById("demo1").innerHTML = Date();
+
+ 	 	function arrow(){
+ 	 		document.getElementById("men").innerHTML = "Men's Collection ⇣";
+ 	 	}
+
+ 	 	function noarrow(){
+ 	 		document.getElementById("men").innerHTML = "Men's Collection ";
+ 	 	}
+
+ 	 	function arrow1(){
+ 	 		document.getElementById("wmen").innerHTML = "Women's Collection ⇣";
+ 	 	}
+
+ 	 	function noarrow1(){
+ 	 		document.getElementById("wmen").innerHTML = "Women's Collection ";
+ 	 	}
+
  	 </script>
 
   	<!-- Optional JavaScript -->
