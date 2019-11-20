@@ -57,96 +57,206 @@
  	 <!-- Main Contents -->
 
  	 <div class="parallax">
- 	   <div class="container">	
- 	 	<div class="row">
-  
-	      <div class="col-sm">
-	          <form method="post" action="">
-	            <div class="card card-body" style="width: 20rem; margin: 10px;">
-	              <img class="card-img-top zoom img-responsive" src="images/demo.jpg"><br />
+	    <div class="container">
+	     	<div class="row">
 
-	              <h4 class="text-info">Navy-Blue Shirt</h4>
+		    <?php 
+		      $sql = "SELECT * FROM `men_pants` ";
+		        $result=$conn->query($sql);
+		        while($row = mysqli_fetch_assoc($result))
+		        {
+		    ?>
+		     	 <div class="col-sm">
+		        
+		          <form method="post" action="index.php?action=add&id=<?php echo $row["id"]; ?>">
+		            <div class="card card-body" style="width: 20rem; margin: 10px;">
+		              <img class="card-img-top zoom img-responsive" src="images/<?php echo $row["image"]; ?>" /><br />
 
-	              <h4 class="text-danger">৳ 1000.00</h4>
-	              <b style="text-align: center;">Quantity</b>
-	              <input type="number" name="quantity" value="1" class="form-control" />
+		              <h4 class="text-info"><?php echo $row["name"]; ?></h4>
 
-	              <input type="hidden" name="hidden_name" value="" />
+		              <h4 class="text-danger">৳ <?php echo $row["price"]; ?></h4>
+		              <b style="text-align: center;">Quantity</b>
+		              <input type="number" name="quantity" value="1" class="form-control" />
 
-	              <input type="hidden" name="hidden_price" value="" />
+		              <input type="hidden" name="hidden_name" value="<?php echo $row["name"]; ?>" />
 
-	              <input type="submit" id="my-form" name="add_to_cart"  style="margin-top: 5px;" class="btn btn-primary" value="Add to Cart">
-	            </div>
+		              <input type="hidden" name="hidden_price" value="<?php echo $row["price"]; ?>" />
 
-	          </form>
-	        </div>
+		              <input type="submit" id="my-form" name="add_to_cart"  style="margin-top: 5px;" class="btn btn-primary" value="Add to Cart" />
 
-	        <div class="col-sm">
-	          <form method="post" action="">
-	            <div class="card card-body" style="width: 20rem; margin: 10px;">
-	              <img class="card-img-top zoom img-responsive" src="images/demo.jpg"><br />
+		            </div>
+		          </form>
+		        </div>
 
-	              <h4 class="text-info">Navy-Blue Shirt</h4>
+		    <?php
+		        }
+		     ?>
 
-	              <h4 class="text-danger">৳ 1000.00</h4>
-	              <b style="text-align: center;">Quantity</b>
-	              <input type="number" name="quantity" value="1" class="form-control" />
+		     <?php 
+		      $sql = "SELECT * FROM `women_shoes` ";
+		        $result=$conn->query($sql);
+		        while($row = mysqli_fetch_assoc($result))
+		        {
+		    ?>
+		     	 <div class="col-sm">
+		        
+		          <form method="post" action="index.php?action=add&id=<?php echo $row["id"]; ?>">
+		            <div class="card card-body" style="width: 20rem; margin: 10px;">
+		              <img class="card-img-top zoom img-responsive" src="images/<?php echo $row["image"]; ?>" /><br />
 
-	              <input type="hidden" name="hidden_name" value="" />
+		              <h4 class="text-info"><?php echo $row["name"]; ?></h4>
 
-	              <input type="hidden" name="hidden_price" value="" />
+		              <h4 class="text-danger">৳ <?php echo $row["price"]; ?></h4>
+		              <b style="text-align: center;">Quantity</b>
+		              <input type="number" name="quantity" value="1" class="form-control" />
 
-	              <input type="submit" id="my-form" name="add_to_cart"  style="margin-top: 5px;" class="btn btn-primary" value="Add to Cart">
-	            </div>
+		              <input type="hidden" name="hidden_name" value="<?php echo $row["name"]; ?>" />
 
-	          </form>
-	        </div>
+		              <input type="hidden" name="hidden_price" value="<?php echo $row["price"]; ?>" />
 
-	        <div class="col-sm">
-	          <form method="post" action="">
-	            <div class="card card-body" style="width: 20rem; margin: 10px;">
-	              <img class="card-img-top zoom img-responsive" src="images/demo.jpg"><br />
+		              <input type="submit" id="my-form" name="add_to_cart"  style="margin-top: 5px;" class="btn btn-primary" value="Add to Cart" />
 
-	              <h4 class="text-info">Navy-Blue Shirt</h4>
+		            </div>
+		          </form>
+		        </div>
 
-	              <h4 class="text-danger">৳ 1000.00</h4>
-	              <b style="text-align: center;">Quantity</b>
-	              <input type="number" name="quantity" value="1" class="form-control" />
+		    <?php
+		        }
+		     ?>
 
-	              <input type="hidden" name="hidden_name" value="" />
+		     <?php 
+		      $sql = "SELECT * FROM `sarees` ";
+		        $result=$conn->query($sql);
+		        while($row = mysqli_fetch_assoc($result))
+		        {
+		    ?>
+		     	 <div class="col-sm">
+		        
+		          <form method="post" action="index.php?action=add&id=<?php echo $row["id"]; ?>">
+		            <div class="card card-body" style="width: 20rem; margin: 10px;">
+		              <img class="card-img-top zoom img-responsive" src="images/<?php echo $row["image"]; ?>" /><br />
 
-	              <input type="hidden" name="hidden_price" value="" />
+		              <h4 class="text-info"><?php echo $row["name"]; ?></h4>
 
-	              <input type="submit" id="my-form" name="add_to_cart"  style="margin-top: 5px;" class="btn btn-primary" value="Add to Cart">
-	            </div>
+		              <h4 class="text-danger">৳ <?php echo $row["price"]; ?></h4>
+		              <b style="text-align: center;">Quantity</b>
+		              <input type="number" name="quantity" value="1" class="form-control" />
 
-	          </form>
-	        </div>
+		              <input type="hidden" name="hidden_name" value="<?php echo $row["name"]; ?>" />
 
-	        <div class="col-sm">
-	          <form method="post" action="">
-	            <div class="card card-body" style="width: 20rem; margin: 10px;">
-	              <img class="card-img-top zoom img-responsive" src="images/demo.jpg"><br />
+		              <input type="hidden" name="hidden_price" value="<?php echo $row["price"]; ?>" />
 
-	              <h4 class="text-info">Navy-Blue Shirt</h4>
+		              <input type="submit" id="my-form" name="add_to_cart"  style="margin-top: 5px;" class="btn btn-primary" value="Add to Cart" />
 
-	              <h4 class="text-danger">৳ 1000.00</h4>
-	              <b style="text-align: center;">Quantity</b>
-	              <input type="number" name="quantity" value="1" class="form-control" />
+		            </div>
+		          </form>
+		        </div>
 
-	              <input type="hidden" name="hidden_name" value="" />
+		    <?php
+		        }
+		     ?>
 
-	              <input type="hidden" name="hidden_price" value="" />
+		     <?php 
+		      $sql = "SELECT * FROM `men_shirt` ";
+		        $result=$conn->query($sql);
+		        while($row = mysqli_fetch_assoc($result))
+		        {
+		    ?>
+		     	 <div class="col-sm">
+		        
+		          <form method="post" action="index.php?action=add&id=<?php echo $row["id"]; ?>">
+		            <div class="card card-body" style="width: 20rem; margin: 10px;">
+		              <img class="card-img-top zoom img-responsive" src="images/<?php echo $row["image"]; ?>" /><br />
 
-	              <input type="submit" id="my-form" name="add_to_cart"  style="margin-top: 5px;" class="btn btn-primary" value="Add to Cart">
-	            </div>
+		              <h4 class="text-info"><?php echo $row["name"]; ?></h4>
 
-	          </form>
-	        </div>
+		              <h4 class="text-danger">৳ <?php echo $row["price"]; ?></h4>
+		              <b style="text-align: center;">Quantity</b>
+		              <input type="number" name="quantity" value="1" class="form-control" />
 
-   		</div>
- 	   </div>	
- 	 </div>
+		              <input type="hidden" name="hidden_name" value="<?php echo $row["name"]; ?>" />
+
+		              <input type="hidden" name="hidden_price" value="<?php echo $row["price"]; ?>" />
+
+		              <input type="submit" id="my-form" name="add_to_cart"  style="margin-top: 5px;" class="btn btn-primary" value="Add to Cart" />
+
+		            </div>
+		          </form>
+		        </div>
+
+		    <?php
+		        }
+		     ?>
+
+		     <?php 
+		      $sql = "SELECT * FROM `men_shoes` ";
+		        $result=$conn->query($sql);
+		        while($row = mysqli_fetch_assoc($result))
+		        {
+		    ?>
+		     	 <div class="col-sm">
+		        
+		          <form method="post" action="index.php?action=add&id=<?php echo $row["id"]; ?>">
+		            <div class="card card-body" style="width: 20rem; margin: 10px;">
+		              <img class="card-img-top zoom img-responsive" src="images/<?php echo $row["image"]; ?>" /><br />
+
+		              <h4 class="text-info"><?php echo $row["name"]; ?></h4>
+
+		              <h4 class="text-danger">৳ <?php echo $row["price"]; ?></h4>
+		              <b style="text-align: center;">Quantity</b>
+		              <input type="number" name="quantity" value="1" class="form-control" />
+
+		              <input type="hidden" name="hidden_name" value="<?php echo $row["name"]; ?>" />
+
+		              <input type="hidden" name="hidden_price" value="<?php echo $row["price"]; ?>" />
+
+		              <input type="submit" id="my-form" name="add_to_cart"  style="margin-top: 5px;" class="btn btn-primary" value="Add to Cart" />
+
+		            </div>
+		          </form>
+		        </div>
+
+		    <?php
+		        }
+		     ?>
+
+		     <?php 
+		      $sql = "SELECT * FROM `wedding_wear` ";
+		        $result=$conn->query($sql);
+		        while($row = mysqli_fetch_assoc($result))
+		        {
+		    ?>
+		     	 <div class="col-sm">
+		        
+		          <form method="post" action="index.php?action=add&id=<?php echo $row["id"]; ?>">
+		            <div class="card card-body" style="width: 20rem; margin: 10px;">
+		              <img class="card-img-top zoom img-responsive" src="images/<?php echo $row["image"]; ?>" /><br />
+
+		              <h4 class="text-info"><?php echo $row["name"]; ?></h4>
+
+		              <h4 class="text-danger">৳ <?php echo $row["price"]; ?></h4>
+		              <b style="text-align: center;">Quantity</b>
+		              <input type="number" name="quantity" value="1" class="form-control" />
+
+		              <input type="hidden" name="hidden_name" value="<?php echo $row["name"]; ?>" />
+
+		              <input type="hidden" name="hidden_price" value="<?php echo $row["price"]; ?>" />
+
+		              <input type="submit" id="my-form" name="add_to_cart"  style="margin-top: 5px;" class="btn btn-primary" value="Add to Cart" />
+
+		            </div>
+		          </form>
+		        </div>
+
+		    <?php
+		        }
+		     ?>
+
+
+		   </div>
+
+	  	</div>	
+ 	</div>
 
  	 <!-- Main Contents Ends -->
 
