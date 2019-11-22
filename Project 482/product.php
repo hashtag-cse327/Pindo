@@ -21,7 +21,7 @@
 				<img class="img-product zoom zoom:hover" src="images/<?php echo $_GET['pic']; ?> ">
 			</div>
 			<div class="col-md-7 sec-back text-product">
-				<strong style= "text-align: top-left"> <?php echo $_GET['name'] ?> </strong><br>
+				<strong style= "text-align: top-left;color: #1692a9;"> <?php echo $_GET['name'] ?> </strong><br>
 				<hr>
 				<span>Quantity: </span>
 				<input type="number" style="width: 6%;" name="quantity" value="1"><br>
