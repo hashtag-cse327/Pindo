@@ -8,9 +8,9 @@
 
  	 <div class="sidebar" id="mySidebar">
  	 	<a href="javascript:void(0)" class="closebtn" onclick="closeNav()">×</a>
- 	 	<h3>Profile</h3>
+ 	 	
 
- 	 	<img src="images/profile.png">
+ 	 	<img src="images/d2.jpg">
 
  	 	<div class="container">
  	 		<div class="profile">
@@ -28,7 +28,7 @@
  	 <button class="openbtn" onclick="openNav()">☰</button>
  	 <!-- SideBar 2 Starts -->
  	 <div class="sidebar2">
- 	 	<img src="images/side.jpg">
+ 	 	
  	 </div>
 
  	 <!-- SideBar 2 Ends -->
