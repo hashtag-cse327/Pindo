@@ -53,18 +53,18 @@
 	            			<div class="dropdownn">
 							  <button class="dropbtn" onmouseover="arrow()" onmouseout="noarrow()" id="men" >Men's Collection </button>
 							  <div class="dropdown-content">
-							    <a href="#">Shirts/T-Shirts</a>
-							    <a href="#">Pants/Trousers</a>
-							    <a href="#">Shoes/Sandals</a>
+							    <a href="shirts.php">Shirts/T-Shirts</a>
+							    <a href="pants.php">Pants/Trousers</a>
+							    <a href="shoes.php">Shoes/Sandals</a>
 							  </div>
 							</div>
 							<div class="dropdown-divider"></div>
 	            			<div class="dropdownn">
 							  <button class="dropbtn" onmouseover="arrow1()" onmouseout="noarrow1()" id="wmen">Women's Collection</button>
 							  <div class="dropdown-content">
-							    <a href="#">Wedding Wear</a>
-							    <a href="#">Sarees</a>
-							    <a href="#">Sandals</a>
+							    <a href="weddingwear.php">Wedding Wear</a>
+							    <a href="sarees.php">Sarees</a>
+							    <a href="sandals.php">Sandals</a>
 							  </div>
 							</div>
 	            			<div class="dropdown-divider"></div>

@@ -64,11 +64,24 @@ header img {
 
 .parallax { 
   /* The image used */
+  /*background-image: url("https://www.w3schools.com/howto/img_parallax3.jpg");*/
+
+  /* Set a specific height */
+  height: 100%; 
+  background: #f4e9e9;
+  /* Create the parallax scrolling effect */
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.parallaxx { 
+  /* The image used */
   background-image: url("https://www.w3schools.com/howto/img_parallax3.jpg");
 
   /* Set a specific height */
   height: 100%; 
-
   /* Create the parallax scrolling effect */
   background-attachment: fixed;
   background-position: center;
@@ -134,12 +147,32 @@ header img {
   animation: glow 1s ease-in-out infinite alternate;
 }
 
+.glow2 {
+  font-size: 70px;
+  color: #fff;
+  text-align: center;
+  margin-top: 50px;
+  margin-bottom: 50px;
+  -webkit-animation: glow2 1s ease-in-out infinite alternate;
+  -moz-animation: glow2 1s ease-in-out infinite alternate;
+  animation: glow2 1s ease-in-out infinite alternate;
+}
+
 @-webkit-keyframes glow {
   from {
     text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #d94e0a, 0 0 40px #d94e0a, 0 0 50px #d94e0a, 0 0 60px #d94e0a, 0 0 70px #d94e0a;
   }
   to {
     text-shadow: 0 0 20px #fff, 0 0 30px #d1450a, 0 0 40px #d1450a, 0 0 50px #d1450a, 0 0 60px #d1450a, 0 0 70px #d1450a, 0 0 80px #d1450a;
+  }
+}
+
+@-webkit-keyframes glow2 {
+  from {
+    text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #e9530b, 0 0 40px #e9530b, 0 0 50px #e9530b, 0 0 60px #e9530b, 0 0 70px #e9530b, 0 0 80px #e9530b;
+  }
+  to {
+    text-shadow: 0 0 20px #fff, 0 0 30px #e5b294, 0 0 40px #e5b294, 0 0 50px #e5b294, 0 0 60px #e5b294, 0 0 70px #e5b294, 0 0 80px #e5b294;
   }
 }
 

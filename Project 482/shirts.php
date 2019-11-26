@@ -1,3 +1,4 @@
+<?php require_once("conn.php"); ?>
 <?php include("header.php") ?>
 <!DOCTYPE html>
 <html>
@@ -6,7 +7,7 @@
 </head>
 <body class="parallax">
 	<div style= "margin-top: 150px;">
-		<h1 class="glow">Shirts/T-shirts</h1>
+		<h1 class="glow2">Shirts/T-shirts</h1>
 	    <div class="container" style="color: black;">
 	     	<div class="row">
 

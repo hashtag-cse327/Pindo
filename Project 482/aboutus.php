@@ -15,7 +15,7 @@
   </head>
   <body>
 
-    <div class="parallax">
+    <div class="parallaxx">
       <div class="container-fluid">
         <!--About Section Starts -->
           <div class="about">

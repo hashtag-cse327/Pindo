@@ -10,8 +10,9 @@
  	 <div class="sidebar" id="mySidebar">
  	 	<a href="javascript:void(0)" class="closebtn" onclick="closeNav()">×</a>
  	 	
-
- 	 	<img src="images/d2.jpg">
+ 	 	<div class="picture">
+ 	 		<img src="images/d2.jpg">
+ 	 	</div>
 
  	 	<div class="container">
  	 		<div class="profile">

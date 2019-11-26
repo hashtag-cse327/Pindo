@@ -57,7 +57,7 @@
 
  	 <!-- Main Contents -->
 
- 	 <div class="parallax">
+ 	 <div class="parallaxx">
 	    <div class="container" style="color: black;">
 	     	<div class="row">
 
