@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 4.7.9
+-- version 4.9.1
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jan 01, 2019 at 05:55 PM
--- Server version: 10.1.31-MariaDB
--- PHP Version: 7.2.3
+-- Generation Time: Nov 26, 2019 at 09:22 AM
+-- Server version: 10.4.8-MariaDB
+-- PHP Version: 7.3.11
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;
@@ -176,6 +176,29 @@ INSERT INTO `sarees` (`id`, `name`, `image`, `price`) VALUES
 (43, 'Black Georgette Saree for Women', 'sarees\\0043.jpg', 2100.00),
 (44, 'Red And Cream Georgette Saree For Women', 'sarees\\0044.jpg', 1200.00),
 (45, 'Blue Silk Saree for Women', 'sarees\\0045.jpg', 1299.00);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `users`
+--
+
+CREATE TABLE `users` (
+  `username` varchar(255) NOT NULL,
+  `fullname` varchar(255) NOT NULL,
+  `email` varchar(255) NOT NULL,
+  `gender` varchar(255) NOT NULL,
+  `password` varchar(255) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `users`
+--
+
+INSERT INTO `users` (`username`, `fullname`, `email`, `gender`, `password`) VALUES
+('iftiaz', 'Iftiaz Ahmed', 'iftiaz.alfi@northsouth.edu', 'Male', 'ban'),
+('ziad69', 'Ziad Hossain', 'ziad.hossain@gmail.com', 'Male', 'bangladesh'),
+('rumman', 'Fatematuj Zahura', 'rumman@yahoo.com', 'Female', 'bangladesh');
 
 -- --------------------------------------------------------
 
