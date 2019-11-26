@@ -1,3 +1,4 @@
+<?php require_once("conn.php"); ?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -18,7 +19,12 @@
  	 				<li><a href="#">Cart</a></li>
  	 				<li><a href="#">Offers</a></li>
  	 				<li><a href="history.php">History</a></li>
- 	 				<li><a href="#">Logout</a></li>
+ 	 				<li><form method="post" action="/Pindo/index.php"><button type="submit" name="logout">Logout</button></form></li>
+ 	 				<?php 
+ 	 					if(isset($_POST['logout'])){
+ 	 						$_SESSION["authen"] = False;
+ 	 					}
+ 	 				 ?>
  	 			</ul>
  	 		</div>
  	 	</div>

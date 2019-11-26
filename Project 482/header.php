@@ -1,12 +1,4 @@
-<?php 
-
-	  session_start();
-	  $conn=mysqli_connect("localhost","root","","onlineshop");
-	  if(!$conn)
-	    die("Connection Failed".mysqli_connect_error());
-?>
-
-
+<?php require_once("conn.php"); ?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -81,13 +73,13 @@
 	        		</li>
 	        		<li class="nav-item">
 	        			<?php 
-	        				if (isset($_POST["ur_name"])==""){
-	        			 ?>
-	        					<a  class="nav-link" href="login.php">Login</a>
+	        				if ($_SESSION["authen"]){
+	        			 ?>		
+	        			 		<a  class="nav-link" href="#">Welcome, <?php echo $_SESSION["fn"]; ?>! </a>
 	        			<?php 
 	        			}
 	        			else { ?>
-	        				<a  class="nav-link" href="#">Welcome, <?php echo $_POST["ur_name"] ?>! </a>
+	        				<a  class="nav-link" href="login.php">Login</a>
 	        			<?php } ?>
 
 	        		</li>
