@@ -53,7 +53,7 @@
 		$u = $_SESSION["username"];
 		$sql = "UPDATE users SET email='$email' WHERE username='$u'";
 		if (mysqli_query($conn, $sql)) {
-			$_SESSION["em"] = $_POST['e'];
+			$_SESSION["em"] = $_POST['email'];
 			$message = "Email updated successfully.";
 			echo "<script type='text/javascript'>alert('$message');</script>";
 		} else {
@@ -121,6 +121,13 @@
 				<input type="text" name="nme" required> <button type="submit" name="u1">Update</button>
 			</form>
 
+			<h4><b> Email: </b><?php echo $_SESSION["em"]; ?> <button style="border: none; font-size: 20px;background: #f4e9e9;text-decoration: underline;color: blue;padding-left: 10px;" onclick="toggler('e')">[+edit]</button> </h4>
+			<form method="POST" id="e" style="display: none;">
+				Enter New Email: 
+				<input type="text" name="email" required> 
+				<button type="submit" name="u3">Update</button>
+			</form>
+
 			<p style="font-size: 25px; margin-top: 10px; margin-bottom: 0px;" ><b>Change Password</b></p>
 			<p style="margin: 0px;margin-top: -15px;">
 				It's a good idea to use a strong password that you don't use elsewhere 
@@ -136,13 +143,6 @@
 				<input style="margin-left: 14.5px;" type="password" name="p3" required><br>
 				<button type="submit" name="u2" onclick="validate()" >Update</button>
 
-			</form>
-
-			<h4><b> Email: </b><?php echo $_SESSION["em"]; ?> <button style="border: none; font-size: 20px;background: #f4e9e9;text-decoration: underline;color: blue;padding-left: 10px;" onclick="toggler('e')">[+edit]</button> </h4>
-			<form method="POST" id="e" style="display: none;">
-				Enter New Email: 
-				<input type="text" name="email" required> 
-				<button type="submit" name="u3">Update</button>
 			</form>
 
 			<p style="font-size: 25px; margin-top: 10px; margin-bottom: 0px;" ><b>Change Your Profile Image</b></p>
