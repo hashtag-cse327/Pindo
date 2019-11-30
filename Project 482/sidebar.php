@@ -18,8 +18,8 @@
  	 		<div class="profile">
  	 			<ul>
  	 				<li><a href="#">Cart</a></li>
- 	 				<li><a href="#">Offers</a></li>
  	 				<li><a href="history.php">History</a></li>
+ 	 				<li><a href="settings.php">Settings</a></li>
  	 				<li><form method="post" action="/Pindo/index.php"><button type="submit" name="logout">Logout</button></form></li>
  	 				<?php 
  	 					if(isset($_POST['logout'])){
