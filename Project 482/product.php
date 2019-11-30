@@ -25,7 +25,7 @@
 				<strong style= "text-align: top-left;color: #1692a9;"> <?php echo $_GET['name'] ?> </strong><br>
 				<hr>
 				<span>Quantity: </span>
-				<input type="number" style="width: 6%;" name="quantity" value="1"><br>
+				<input type="number" style="width: 12%;" name="quantity" value="1"><br>
 				<hr>
 				<span style="color: red; font-weight: 900;font-size: 30px;">৳ <?php echo $_GET['price']; ?></span><br>
 				<button type= "submit" class = "btnSubmit">Add to cart</button>
