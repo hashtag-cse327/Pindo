@@ -98,7 +98,6 @@
         $gender = $_POST['gender'];
         $pass   = $_POST['password1'];
 
-
         $sql = "INSERT INTO users (username, fullname, email, gender, password) VALUES ('$user', '$fn', '$email', '$gender', '$pass')";
 
         if (mysqli_query($conn, $sql)) {

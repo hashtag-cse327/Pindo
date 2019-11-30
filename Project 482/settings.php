@@ -48,13 +48,10 @@
 ?>
 
 <?php 
-
 	if(isset($_POST['u3'])){
-
 		$email = $_POST['email'];
 		$u = $_SESSION["username"];
 		$sql = "UPDATE users SET email='$email' WHERE username='$u'";
-
 		if (mysqli_query($conn, $sql)) {
 			$_SESSION["em"] = $_POST['e'];
 			$message = "Email updated successfully.";
@@ -66,6 +63,35 @@
 	}
 ?>
 
+<?php 
+	
+	if(isset($_POST['u4'])){
+		// Get image name
+		$image = $_FILES['image']['name'];
+
+		$target = "images/user".basename($image); // image file directory
+
+		
+		$u = $_SESSION["username"];
+
+		$sql = "UPDATE users SET image='$image' WHERE username='$u'";
+
+        if (mysqli_query($conn, $sql)) {
+            $message = "Image uploaded successfully!";
+            echo "<script type='text/javascript'>alert('$message');</script>";
+        } else {
+            $message = "Error: " . $sql . "<br/>" . mysqli_error($conn);
+            echo "<script type='text/javascript'>alert('$message');</script>";
+        }
+
+        if (move_uploaded_file($_FILES['image']['tmp_name'], $target)){
+
+		} else {
+
+		}
+	}
+
+?>
 
 
 
@@ -95,7 +121,6 @@
 				<input type="text" name="nme" required> <button type="submit" name="u1">Update</button>
 			</form>
 
-
 			<p style="font-size: 25px; margin-top: 10px; margin-bottom: 0px;" ><b>Change Password</b></p>
 			<p style="margin: 0px;margin-top: -15px;">
 				It's a good idea to use a strong password that you don't use elsewhere 
@@ -113,13 +138,18 @@
 
 			</form>
 
-
-			
 			<h4><b> Email: </b><?php echo $_SESSION["em"]; ?> <button style="border: none; font-size: 20px;background: #f4e9e9;text-decoration: underline;color: blue;padding-left: 10px;" onclick="toggler('e')">[+edit]</button> </h4>
 			<form method="POST" id="e" style="display: none;">
 				Enter New Email: 
 				<input type="text" name="email" required> 
 				<button type="submit" name="u3">Update</button>
+			</form>
+
+			<p style="font-size: 25px; margin-top: 10px; margin-bottom: 0px;" ><b>Change Your Profile Image</b></p>
+
+			<form name="name" method="POST" action="/Pindo/settings.php" enctype="multipart/form-data">
+				<input type="file" name="image"><br>
+				<button style="margin-top: 10px;" type="submit" name="u4" >Upload Image</button>
 			</form>
 
 

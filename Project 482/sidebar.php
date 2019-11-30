@@ -11,7 +11,21 @@
  	 	<a href="javascript:void(0)" class="closebtn" onclick="closeNav()">×</a>
  	 	
  	 	<div class="picture">
- 	 		<img src="images/d2.jpg">
+ 	 		<?php 
+    
+		        $user = $_SESSION["username"];
+
+		        $sql = "SELECT image FROM users WHERE username='$user'";
+		        $result = mysqli_query($conn, $sql);
+
+		        if (mysqli_num_rows($result) > 0) {
+		            while($row = mysqli_fetch_assoc($result)) {
+		                echo "<img alt='Upload Image From Settings' src='images/user".$row['image']."' >";
+		            }
+		        } else {
+		        	echo "Upload Image!";
+		        }
+		?>
  	 	</div>
 
  	 	<div class="container">
