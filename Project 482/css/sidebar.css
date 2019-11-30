@@ -46,6 +46,10 @@
   color: white;
 }
 
+.profile a:hover{
+  color: white;
+}
+
 .sidebar2{
   background: url(https://cdn.pixabay.com/photo/2017/08/06/22/52/jeans-2597210_960_720.jpg);
   background-position: center;
