@@ -1,4 +1,11 @@
 <?php require_once("conn.php"); ?>
+<?php 
+	if ($_SESSION["authen"]){
+		include("sidebar.php");
+	} 
+	else {
+	}
+?>
 <?php include ("header.php") ?>
 <?php 
 	if (isset($_POST["ur_name"])==""){
