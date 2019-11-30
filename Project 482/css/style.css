@@ -249,3 +249,16 @@ header img {
   margin: 0;
   padding: 10px;  
 }
+
+.setting button{
+    padding: 6px;
+    border-radius: 12px;
+    background: #d1450a;
+    border: 1px solid #d1450a;
+    color: white;
+}
+
+.setting button:hover{
+  background: #d1450ad1;
+  border: 1px solid #d1450ad1;
+}

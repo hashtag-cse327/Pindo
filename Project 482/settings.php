@@ -26,17 +26,23 @@
 		$newp = $_POST['p2'];
 		$newpp = $_POST['p3'];
 		$u = $_SESSION["username"];
+		$p = $_SESSION["pass"];
 
 		if($newp == $newpp) {
-		$sql = "UPDATE users SET password='$newp' WHERE username='$u' AND password= '$oldp'";
+			$sql = "UPDATE users SET password='$newp' WHERE username='$u' AND password= '$oldp'";
 
-		if (mysqli_query($conn, $sql)) {
-			$message = "Password updated successfully.";
-			echo "<script type='text/javascript'>alert('$message');</script>";
-		} else {
-			$message = "Error: " . $sql . "<br/>" . mysqli_error($conn);
-			echo "<script type='text/javascript'>alert('$message');</script>";
-		}
+			if($oldp == $p) {
+				if (mysqli_query($conn, $sql)) {
+					$message = "Password updated successfully.";
+					echo "<script type='text/javascript'>alert('$message');</script>";
+				} else {
+					$message = "Error: " . $sql . "<br/>" . mysqli_error($conn);
+					echo "<script type='text/javascript'>alert('$message');</script>";
+				}
+			} else {
+				$message = "Entered wrong old password!";
+				echo "<script type='text/javascript'>alert('$message');</script>";
+			}
 	    }
 	}
 ?>
@@ -63,14 +69,18 @@
 	<div class="container" style = " margin-top: 130px;"> 
 		<h1>Account Settings</h1>
 		<hr>
-		<div style="margin-left: 150px; margin-top: 50px; ">
+		<div class="setting" style=" margin-top: 50px; ">
 			<h4><b>Full Name: </b><?php echo $_SESSION["fn"]; ?> <button style="border: none; font-size: 20px;background: #f4e9e9;text-decoration: underline;color: blue;padding-left: 10px;" onclick="toggler('fname')">[+edit]</button> </h4>
 			<form method="POST" id="fname" style="display: none;">
 				Enter new name: 
 				<input type="text" name="nme"> <button type="submit" name="u1">Update</button>
 			</form>
 
-			<button style="border: none; font-size: 25px;background: #f4e9e9;text-decoration: underline;color: blue;" onclick="toggler('p')">Change Password</button>
+			<p style="font-size: 25px; margin-top: 10px; margin-bottom: 0px;" ><b>Change Password</b></p>
+			<p style="margin: 0px;margin-top: -15px;">
+				It's a good idea to use a strong password that you don't use elsewhere 
+				<button style="border: none; background: #f4e9e9;text-decoration: underline;color: blue; font-size: 20px; padding-left: 10px;" onclick="toggler('p')">[+edit]</button> 
+			</p>
 
 			<form name="passForm" method="POST" id="p" style="display: none;">
 				Enter Old Password: 

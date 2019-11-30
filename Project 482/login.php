@@ -10,6 +10,7 @@
         $user = $_POST['ur_name'];
         $pass = $_POST['password'];
         $_SESSION["username"] = $user;
+        $_SESSION["pass"] = $pass;
 
         $sql = "SELECT fullname FROM users WHERE username='$user' AND password='$pass'";
         $result = mysqli_query($conn, $sql);
