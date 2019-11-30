@@ -12,12 +12,13 @@
         $_SESSION["username"] = $user;
         $_SESSION["pass"] = $pass;
 
-        $sql = "SELECT fullname FROM users WHERE username='$user' AND password='$pass'";
+        $sql = "SELECT fullname, email FROM users WHERE username='$user' AND password='$pass'";
         $result = mysqli_query($conn, $sql);
 
         if (mysqli_num_rows($result) > 0) {
             while($row = mysqli_fetch_assoc($result)) {
                 $_SESSION["fn"] = $row["fullname"];
+                $_SESSION["em"] = $row["email"];
                 $_SESSION["authen"] = True;
                 header("location: index.php");
             }
@@ -96,6 +97,7 @@
         $email  = $_POST['email'];
         $gender = $_POST['gender'];
         $pass   = $_POST['password1'];
+
 
         $sql = "INSERT INTO users (username, fullname, email, gender, password) VALUES ('$user', '$fn', '$email', '$gender', '$pass')";
 
