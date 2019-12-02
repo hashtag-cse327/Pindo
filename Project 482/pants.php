@@ -36,10 +36,6 @@
 		              <h4 class="text-danger">৳ <?php echo $row["price"]; ?></h4></a>
 		              <b style="text-align: center;color: black;font-size: 20px;">Quantity</b>
 		              <input type="number" name="quantity" value="1" class="form-control" />
-
-		              <input type="hidden" name="hidden_name" value="<?php echo $row["name"]; ?>" />
-
-		              <input type="hidden" name="hidden_price" value="<?php echo $row["price"]; ?>" />
 					  
 		              <input type="submit" id="my-form" name="add_to_cart"  style="margin-top: 5px;" class="btn btn-primary" value="Add to Cart" />
 

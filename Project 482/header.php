@@ -68,7 +68,7 @@
 							  </div>
 							</div>
 	            			<div class="dropdown-divider"></div>
-	            			<a class="dropdown-item" href="#latst">Latest Collection</a>
+	            			<a class="dropdown-item" href="latest.php">Latest Collection</a>
 	          			</div>
 	        		</li>
 	        		<li class="nav-item">

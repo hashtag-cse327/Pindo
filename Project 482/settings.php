@@ -69,7 +69,7 @@
 		// Get image name
 		$image = $_FILES['image']['name'];
 
-		$target = "images/user".basename($image); // image file directory
+		$target = "images/user/".basename($image); // image file directory
 
 		
 		$u = $_SESSION["username"];
@@ -151,6 +151,8 @@
 				<input type="file" name="image"><br>
 				<button style="margin-top: 10px;" type="submit" name="u4" >Upload Image</button>
 			</form>
+
+			<hr>
 
 
 

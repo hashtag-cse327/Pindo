@@ -79,10 +79,6 @@
 		              <h4 class="text-danger">৳ <?php echo $row["price"]; ?></h4></a>
 		              <b style="text-align: center;color: black;font-size: 20px;">Quantity</b>
 		              <input type="number" name="quantity" value="1" class="form-control" />
-
-		              <input type="hidden" name="hidden_name" value="<?php echo $row["name"]; ?>" />
-
-		              <input type="hidden" name="hidden_price" value="<?php echo $row["price"]; ?>" />
 					  
 		              <input type="submit" id="my-form" name="add_to_cart"  style="margin-top: 5px;" class="btn btn-primary" value="Add to Cart" />
 
@@ -114,9 +110,6 @@
 		              <b style="text-align: center;color: black;font-size: 20px;">Quantity</b>
 		              <input type="number" name="quantity" value="1" class="form-control" />
 
-		              <input type="hidden" name="hidden_name" value="<?php echo $row["name"]; ?>" />
-
-		              <input type="hidden" name="hidden_price" value="<?php echo $row["price"]; ?>" />
 					  
 		              <input type="submit" id="my-form" name="add_to_cart"  style="margin-top: 5px;" class="btn btn-primary" value="Add to Cart" />
 
@@ -137,7 +130,7 @@
 		    	 <a href="product.php?name=<?php echo $row["name"]; ?>&pic=<?php echo $row["image"]; ?>&price=<?php echo $row["price"]; ?>">
 		     	 <div class="col-sm">
 		        
-		          <form method="post" action="index.php?action=add&id=<?php echo $row["id"]; ?>">
+		          <form method="post" action="">
 		            <div class="card card-body" style="width: 20rem; margin: 10px;">
 		              <img class="card-img-top img-responsive" src="images/<?php echo $row["image"]; ?>" /><br />
 
@@ -146,10 +139,6 @@
 		              <h4 class="text-danger">৳ <?php echo $row["price"]; ?></h4></a>
 		              <b style="text-align: center;color: black;font-size: 20px;">Quantity</b>
 		              <input type="number" name="quantity" value="1" class="form-control" />
-
-		              <input type="hidden" name="hidden_name" value="<?php echo $row["name"]; ?>" />
-
-		              <input type="hidden" name="hidden_price" value="<?php echo $row["price"]; ?>" />
 
 		              <input type="submit" id="my-form" name="add_to_cart"  style="margin-top: 5px;" class="btn btn-primary" value="Add to Cart" />
 
@@ -170,7 +159,7 @@
 		    	 <a href="product.php?name=<?php echo $row["name"]; ?>&pic=<?php echo $row["image"]; ?>&price=<?php echo $row["price"]; ?>">
 		     	 <div class="col-sm">
 		        
-		          <form method="post" action="index.php?action=add&id=<?php echo $row["id"]; ?>">
+		          <form method="post" action="">
 		            <div class="card card-body" style="width: 20rem; margin: 10px;">
 		              <img class="card-img-top img-responsive" src="images/<?php echo $row["image"]; ?>" /><br />
 
@@ -179,10 +168,6 @@
 		              <h4 class="text-danger">৳ <?php echo $row["price"]; ?></h4></a>
 		              <b style="text-align: center;color: black;font-size: 20px;">Quantity</b>
 		              <input type="number" name="quantity" value="1" class="form-control" />
-
-		              <input type="hidden" name="hidden_name" value="<?php echo $row["name"]; ?>" />
-
-		              <input type="hidden" name="hidden_price" value="<?php echo $row["price"]; ?>" />
 
 		              <input type="submit" id="my-form" name="add_to_cart"  style="margin-top: 5px;" class="btn btn-primary" value="Add to Cart" />
 
@@ -204,7 +189,7 @@
 		    	 <a href="product.php?name=<?php echo $row["name"]; ?>&pic=<?php echo $row["image"]; ?>&price=<?php echo $row["price"]; ?>">
 		     	 <div class="col-sm">
 		        
-		          <form method="post" action="index.php?action=add&id=<?php echo $row["id"]; ?>">
+		          <form method="post" action="">
 		            <div class="card card-body" style="width: 20rem; margin: 10px;">
 		              <img class="card-img-top img-responsive" src="images/<?php echo $row["image"]; ?>" /><br />
 
@@ -213,10 +198,6 @@
 		              <h4 class="text-danger">৳ <?php echo $row["price"]; ?></h4></a>
 		              <b style="text-align: center;color: black;font-size: 20px;">Quantity</b>
 		              <input type="number" name="quantity" value="1" class="form-control" />
-
-		              <input type="hidden" name="hidden_name" value="<?php echo $row["name"]; ?>" />
-
-		              <input type="hidden" name="hidden_price" value="<?php echo $row["price"]; ?>" />
 
 		              <input type="submit" id="my-form" name="add_to_cart"  style="margin-top: 5px;" class="btn btn-primary" value="Add to Cart" />
 
@@ -238,7 +219,7 @@
 		    	 <a href="product.php?name=<?php echo $row["name"]; ?>&pic=<?php echo $row["image"]; ?>&price=<?php echo $row["price"]; ?>">
 		     	 <div class="col-sm">
 		        
-		          <form method="post" action="index.php?action=add&id=<?php echo $row["id"]; ?>">
+		          <form method="post" action="">
 		            <div class="card card-body" style="width: 20rem; margin: 10px;">
 		              <img class="card-img-top img-responsive" src="images/<?php echo $row["image"]; ?>" /><br />
 
@@ -247,10 +228,6 @@
 		              <h4 class="text-danger">৳ <?php echo $row["price"]; ?></h4></a>
 		              <b style="text-align: center;color: black;font-size: 20px;">Quantity</b>
 		              <input type="number" name="quantity" value="1" class="form-control" />
-
-		              <input type="hidden" name="hidden_name" value="<?php echo $row["name"]; ?>" />
-
-		              <input type="hidden" name="hidden_price" value="<?php echo $row["price"]; ?>" />
 
 		              <input type="submit" id="my-form" name="add_to_cart"  style="margin-top: 5px;" class="btn btn-primary" value="Add to Cart" />
 

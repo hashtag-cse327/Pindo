@@ -20,11 +20,9 @@
                 $_SESSION["fn"] = $row["fullname"];
                 $_SESSION["em"] = $row["email"];
                 $_SESSION["authen"] = True;
-                header("location: index.php");
             }
         } else {
             $_SESSION["authen"] = False;
-            header("location: login.php");
         }
 
     }
@@ -107,6 +105,16 @@
             $message = "Error: " . $sql . "<br/>" . mysqli_error($conn);
             echo "<script type='text/javascript'>alert('$message');</script>";
         }
+
+        $sql = "CREATE TABLE $user (
+            name VARCHAR(30) NOT NULL,
+            quantity VARCHAR(30) NOT NULL,
+            price VARCHAR(30) NOT NULL,
+            image VARCHAR(30) NOT NULL,
+            purchased_time VARCHAR(30) NOT NULL
+            )";
+        mysqli_query($conn, $sql);
+
     }
 
 
