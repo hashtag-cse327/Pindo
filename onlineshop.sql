@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Nov 30, 2019 at 08:31 PM
+-- Generation Time: Dec 02, 2019 at 02:32 PM
 -- Server version: 10.4.8-MariaDB
 -- PHP Version: 7.3.11
 
@@ -35,6 +35,20 @@ CREATE TABLE `customer` (
   `mobile` varchar(255) NOT NULL,
   `address` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `iftiaz`
+--
+
+CREATE TABLE `iftiaz` (
+  `name` varchar(30) NOT NULL,
+  `quantity` varchar(30) NOT NULL,
+  `price` varchar(30) NOT NULL,
+  `image` varchar(30) NOT NULL,
+  `purchased_time` varchar(30) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- --------------------------------------------------------
 
@@ -189,20 +203,16 @@ CREATE TABLE `users` (
   `email` varchar(255) NOT NULL,
   `gender` varchar(255) NOT NULL,
   `password` varchar(255) NOT NULL,
-  `image` varchar(200) NOT NULL
+  `image` varchar(200) NOT NULL,
+  `address` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Dumping data for table `users`
 --
 
-INSERT INTO `users` (`username`, `fullname`, `email`, `gender`, `password`, `image`) VALUES
-('iftiaz', 'Iftiaz Ahmed', 'iftiaz.ahmed@yahoo.com', 'Male', 'password', '72323673_3410866522258525_6353022814294900736_o.jpg'),
-('ziad69', 'Ziad Hossain', 'ziad.hossain@gmail.com', 'Male', 'bangladesh', ''),
-('rumman', 'Fatematuj Zahura', 'rumman@yahoo.com', 'Female', 'bangladesh', 'sunflower.jpg'),
-('rahmat47', 'Rahmat Ullah', 'rahmat@gmail.com', 'Male', 'ban', ''),
-('', '', '', '', '', ''),
-('', '', '', '', '', '17972233_1678037068874821_1128503228278337463_o.jpg');
+INSERT INTO `users` (`username`, `fullname`, `email`, `gender`, `password`, `image`, `address`) VALUES
+('iftiaz', 'Iftiaz Ahmed', 'iftiaz.ahmed@yahoo.com', 'Male', 'ban', '17972233_1678037068874821_1128503228278337463_o.jpg', '');
 
 -- --------------------------------------------------------
 
