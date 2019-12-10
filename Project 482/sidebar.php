@@ -1,4 +1,7 @@
-<?php require_once("conn.php"); ?>
+<?php 
+	ob_start();
+	require_once("conn.php");
+?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -34,7 +37,7 @@
  	 				<li><a href="#">Cart</a></li>
  	 				<li><a href="history.php">History</a></li>
  	 				<li><a href="settings.php">Settings</a></li>
- 	 				<li><form method="post" action="/Pindo/index.php"><button type="submit" name="logout">Logout</button></form></li>
+ 	 				<li><form method="post"><button type="submit" name="logout">Logout</button></form></li>
  	 			</ul>
  	 		</div>
  	 	</div>
@@ -65,5 +68,7 @@
 <?php 
     if(isset($_POST['logout'])){
  	 	$_SESSION["authen"] = False;
+ 	 	header("Location: index.php");
+ 	 	ob_end_flush();
  	}
 ?>

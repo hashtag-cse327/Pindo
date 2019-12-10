@@ -1,10 +1,14 @@
-<?php require_once("conn.php"); ?>
+<?php
+    ob_start(); //to store the header in the buffer, we will use the php ob_start() function
+    require_once("conn.php"); 
+?>
 <?php include("header.php") ?>
 
 <!-- Sign in part -->
 
 <?php 
     $_SESSION["authen"] = False;
+    $_SESSION["not_pass"] = False;
     if(isset($_POST['signin'])){
 
         $user = $_POST['ur_name'];
@@ -22,11 +26,18 @@
                 $_SESSION["authen"] = True;
             }
         } else {
+            $_SESSION["not_pass"] = True;
             $_SESSION["authen"] = False;
         }
 
+        $change = $_SESSION["authen"];
+        if($change == True){
+            header("Location: index.php");
+            ob_end_flush(); //to clean the buffer, we will use the ob_end_flush() function
+        }
     }
 ?>
+
 
 <!DOCTYPE html>
 <html>
@@ -45,9 +56,16 @@
                      
                         <form method="POST" name="signin_form" action="" onsubmit="return signin_validate()">
                         	Username:<br>
-                        	<input type="text" class="form-control" name="ur_name" placeholder="iftiaz.ahmed"><br>
+                        	<input type="text" class="form-control" name="ur_name" placeholder="iftiaz_ahmed"><br>
                         	Password:<br>
-                        	<input type="password" class="form-control" name="password"><br><br>
+                        	<input type="password" class="form-control" name="password"><br>
+                            <span style="color: #00ffff;font-weight: 100;"><?php
+                                $change = $_SESSION["not_pass"]; 
+                                if($change == True){
+                                    echo "*Password didn't match!";
+                                }
+                             ?></span>
+                             <br><br>
                         	<button type="login" name="signin" class="btnSubmit">Login</button><br>
                         </form>
                     
@@ -63,7 +81,7 @@
                         	Email:<br>
                         	<input type="email" class="form-control" name="email" placeholder="example@email.com"><br>
                         	Username:<br>
-                        	<input type="text" class="form-control" name="u_name" placeholder="iftiaz.ahmed"><br>
+                        	<input type="text" class="form-control" name="u_name" placeholder="iftiaz_ahmed"><br>
                         	Gender:<br>
                         	<select name="gender" class="form-control">
 							  <option value="0">Choose..</option>
@@ -116,8 +134,6 @@
         mysqli_query($conn, $sql);
 
     }
-
-
 ?>
 
 <?php include("footer.php") ?>
