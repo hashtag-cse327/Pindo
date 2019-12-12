@@ -125,11 +125,11 @@
         }
 
         $sql = "CREATE TABLE $user (
-            name VARCHAR(30) NOT NULL,
-            quantity VARCHAR(30) NOT NULL,
-            price VARCHAR(30) NOT NULL,
-            image VARCHAR(30) NOT NULL,
-            purchased_time VARCHAR(30) NOT NULL
+            name VARCHAR(255) NOT NULL,
+            quantity VARCHAR(255) NOT NULL,
+            price VARCHAR(255) NOT NULL,
+            image VARCHAR(255) NOT NULL,
+            purchased_time VARCHAR(255) NOT NULL
             )";
         mysqli_query($conn, $sql);
 

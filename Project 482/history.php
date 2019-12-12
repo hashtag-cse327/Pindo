@@ -7,13 +7,6 @@
 	}
 ?>
 <?php include("header.php") ?>
-<?php 
-	if (isset($_POST["ur_name"])==""){
-	} 
-	else {
-	  include("sidebar.php");
-	}
-?>
 
 <head>
 	<title>History</title>
@@ -33,35 +26,34 @@
 				<th>Name</th>
 				<th>Quantity</th>
 				<th>Price</th>
-				<th>Purchased Time</th>
-			</tr>
-			<tr class="drop-shadow1">
-				<td style="text-align: center;"><img src="images/demo.jpg"></td>
-				<td>Shirt</td>
-				<td>2</td>
-				<td>300tk</td>
-				<th>01-01-2019</th>
+				<th>Purchased Date</th>
 			</tr>
 
-			
-			<tr class="drop-shadow1">
-				<td style="text-align: center;"><img src="images/demo.jpg"></td>
-				<td>Shirt</td>
-				<td>2</td>
-				<td>300tk</td>
-				<th>01-01-2019</th>
-			</tr>
-			
-			
-			<tr class="drop-shadow1">
-				<td style="text-align: center;"><img src="images/demo.jpg"></td>
-				<td>Shirt</td>
-				<td>2</td>
-				<td>300tk</td>
-				<th>01-01-2019</th>
-			</tr>
-			
-			
+			<?php 
+				$user = $_SESSION["username"];
+				$sql = "SELECT * FROM $user";
+        		$result = mysqli_query($conn, $sql);
+
+        		if (mysqli_num_rows($result) > 0) {
+            		while($row = mysqli_fetch_assoc($result)) {
+            ?>
+            			<tr class="drop-shadow1">
+							<td  style="text-align: center;"><img src="images/<?php echo $row["image"];?>"></td>
+							<td><?php echo $row["name"]; ?></td>
+							<td><?php echo $row["quantity"]; ?></td>
+							<td><?php echo $row["price"]; ?></td>
+							<th><?php echo $row["purchased_time"]; ?></th>
+						</tr>
+            <?php   
+            		}
+        		} else {
+           	?>		
+           			<tr>
+           				<td colspan="4"><?php echo "No items purchased yet!"; ?></td>
+           			</tr>
+           	<?php		
+        		}
+			?>
 			
 		</table>
 	</section>

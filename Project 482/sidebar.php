@@ -34,7 +34,7 @@
  	 	<div class="container">
  	 		<div class="profile">
  	 			<ul>
- 	 				<li><a href="#">Cart</a></li>
+ 	 				<li><a href="cart.php">Cart</a></li>
  	 				<li><a href="history.php">History</a></li>
  	 				<li><a href="settings.php">Settings</a></li>
  	 				<li><form method="post"><button type="submit" name="logout">Logout</button></form></li>
@@ -67,6 +67,8 @@
 
 <?php 
     if(isset($_POST['logout'])){
+ 	 	session_destroy(); //session destroy followed by s.start is given so that the cart details doesn't show in other users cart
+ 	 	session_start();
  	 	$_SESSION["authen"] = False;
  	 	header("Location: index.php");
  	 	ob_end_flush();
