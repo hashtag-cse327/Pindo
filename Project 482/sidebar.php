@@ -34,7 +34,10 @@
  	 	<div class="container">
  	 		<div class="profile">
  	 			<ul>
- 	 				<li><a href="cart.php">Cart</a></li>
+ 	 				<?php 
+ 	 					$num = $_SESSION["cart_no"];
+ 	 				?>
+ 	 				<li><a href="cart.php">Cart <span class="badge badge-pill badge-warning"> <?php echo $num; ?> </span></a></li>
  	 				<li><a href="history.php">History</a></li>
  	 				<li><a href="settings.php">Settings</a></li>
  	 				<li><form method="post"><button type="submit" name="logout">Logout</button></form></li>

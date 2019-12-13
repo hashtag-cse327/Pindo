@@ -24,6 +24,7 @@
                 $_SESSION["fn"] = $row["fullname"];
                 $_SESSION["em"] = $row["email"];
                 $_SESSION["authen"] = True;
+                $_SESSION["cart_no"] = 0;
             }
         } else {
             $_SESSION["not_pass"] = True;

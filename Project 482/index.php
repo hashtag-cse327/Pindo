@@ -1,16 +1,7 @@
 <?php require_once("conn.php"); ?>
-<?php 
-	if ($_SESSION["authen"]){
-		include("sidebar.php");
-	} 
-	else {
-	}
-?>
-<?php include("header.php"); ?>
 
 <!-- Inserting Selected Items to the cart -->
 <?php 
-	
 	if(isset($_POST["add_to_cart"])){
 
     	if(isset($_SESSION["shopping_cart"])) {
@@ -18,6 +9,7 @@
       		
       		if(!in_array($_GET["id"], $item_array_id)) {
         		$count = count($_SESSION["shopping_cart"]);
+        		$_SESSION["cart_no"] = $count + 1;
 		        $item_array = array(
 		          'item_id'     =>  $_GET["id"],
 		          'item_name'     =>  $_POST["hidden_name"],
@@ -49,6 +41,7 @@
 	      	foreach($_SESSION["shopping_cart"] as $keys => $values) {
 	        	
 	        	if($values["item_id"] == $_GET["id"]) {
+	        		$_SESSION["cart_no"] = $_SESSION["cart_no"] - 1;
 	          		unset($_SESSION["shopping_cart"][$keys]);
 	          		echo '<script>alert("Item Removed")</script>';
 	          		echo '<script>window.location="cart.php"</script>';
@@ -57,7 +50,14 @@
     	}
   	}
 ?>
-
+<?php 
+	if ($_SESSION["authen"]){
+		include("sidebar.php");
+	} 
+	else {
+	}
+?>
+<?php include("header.php"); ?>
 <!DOCTYPE html>
 <html lang="en">
   <head>
