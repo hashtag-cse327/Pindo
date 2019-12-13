@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Dec 02, 2019 at 02:32 PM
+-- Generation Time: Dec 13, 2019 at 08:39 PM
 -- Server version: 10.4.8-MariaDB
 -- PHP Version: 7.3.11
 
@@ -43,12 +43,21 @@ CREATE TABLE `customer` (
 --
 
 CREATE TABLE `iftiaz` (
-  `name` varchar(30) NOT NULL,
-  `quantity` varchar(30) NOT NULL,
-  `price` varchar(30) NOT NULL,
-  `image` varchar(30) NOT NULL,
-  `purchased_time` varchar(30) NOT NULL
+  `name` varchar(255) NOT NULL,
+  `quantity` varchar(255) NOT NULL,
+  `price` varchar(255) NOT NULL,
+  `purchased_time` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `iftiaz`
+--
+
+INSERT INTO `iftiaz` (`name`, `quantity`, `price`, `purchased_time`) VALUES
+('Light Slate Gray Georgette Lehenga For Women', '3', '5970', '10:21:pm  |  13-12-2019'),
+('Leather Casual Boat Shoe For Men - Dark Blue', '2', '4140', '10:21:pm  |  13-12-2019'),
+('Navy Blue Cotton Trouser for Men', '1', '780', '10:43:pm  |  13-12-2019'),
+('Light Beige Twill Gabardine Pant for Men', '1', '590', '10:43:pm  |  13-12-2019');
 
 -- --------------------------------------------------------
 
@@ -166,6 +175,30 @@ INSERT INTO `men_shoes` (`id`, `name`, `image`, `price`) VALUES
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `review`
+--
+
+CREATE TABLE `review` (
+  `id` int(255) NOT NULL,
+  `username` varchar(255) NOT NULL,
+  `review` text NOT NULL,
+  `rating` int(255) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `review`
+--
+
+INSERT INTO `review` (`id`, `username`, `review`, `rating`) VALUES
+(14, 'iftiaz', 'Nice Product, I liked it.', 5),
+(53, 'iftiaz', 'Not bad....', 3),
+(53, 'iftiaz', 'Quality improved.....', 5),
+(53, 'iftiaz', 'Nice..!', 5),
+(27, 'iftiaz', 'The product is different from the picture, bad quality.\r\nthink twice before you buy this....', 2);
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `sarees`
 --
 
@@ -212,7 +245,7 @@ CREATE TABLE `users` (
 --
 
 INSERT INTO `users` (`username`, `fullname`, `email`, `gender`, `password`, `image`, `address`) VALUES
-('iftiaz', 'Iftiaz Ahmed', 'iftiaz.ahmed@yahoo.com', 'Male', 'ban', '17972233_1678037068874821_1128503228278337463_o.jpg', '');
+('iftiaz', 'Iftiaz Ahmed', 'iftiaz.alfi@northsouth.edu', 'Male', 'password', '17972233_1678037068874821_1128503228278337463_o.jpg', '');
 
 -- --------------------------------------------------------
 
