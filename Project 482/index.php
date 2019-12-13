@@ -117,7 +117,7 @@
 		        while($row = mysqli_fetch_assoc($result))
 		        {
 		    ?>		
-		    	 <a href="product.php?name=<?php echo $row["name"]; ?>&pic=<?php echo $row["image"]; ?>&price=<?php echo $row["price"]; ?>">
+		    	 <a href="product.php?id=<?php echo $row["id"]; ?>&name=<?php echo $row["name"]; ?>&pic=<?php echo $row["image"]; ?>&price=<?php echo $row["price"]; ?>">
 		     	 <div class="col-sm">
 		        
 		          <form method="post" action="index.php?action=add&id=<?php echo $row["id"]; ?>">
@@ -151,7 +151,7 @@
 		        while($row = mysqli_fetch_assoc($result))
 		        {
 		    ?>	
-		    	 <a href="product.php?name=<?php echo $row["name"]; ?>&pic=<?php echo $row["image"]; ?>&price=<?php echo $row["price"]; ?>">
+		    	 <a href="product.php?id=<?php echo $row["id"]; ?>&name=<?php echo $row["name"]; ?>&pic=<?php echo $row["image"]; ?>&price=<?php echo $row["price"]; ?>">
 		     	 <div class="col-sm">
 		        
 		          <form method="post" action="index.php?action=add&id=<?php echo $row["id"]; ?>">
@@ -185,7 +185,7 @@
 		        while($row = mysqli_fetch_assoc($result))
 		        {
 		    ?>
-		    	 <a href="product.php?name=<?php echo $row["name"]; ?>&pic=<?php echo $row["image"]; ?>&price=<?php echo $row["price"]; ?>">
+		    	 <a href="product.php?id=<?php echo $row["id"]; ?>&name=<?php echo $row["name"]; ?>&pic=<?php echo $row["image"]; ?>&price=<?php echo $row["price"]; ?>">
 		     	 <div class="col-sm">
 		        
 		          <form method="post" action="index.php?action=add&id=<?php echo $row["id"]; ?>">
@@ -218,7 +218,7 @@
 		        while($row = mysqli_fetch_assoc($result))
 		        {
 		    ?>
-		    	 <a href="product.php?name=<?php echo $row["name"]; ?>&pic=<?php echo $row["image"]; ?>&price=<?php echo $row["price"]; ?>">
+		    	 <a href="product.php?id=<?php echo $row["id"]; ?>&name=<?php echo $row["name"]; ?>&pic=<?php echo $row["image"]; ?>&price=<?php echo $row["price"]; ?>">
 		     	 <div class="col-sm">
 		        
 		          <form method="post" action="index.php?action=add&id=<?php echo $row["id"]; ?>">
@@ -252,7 +252,7 @@
 		        while($row = mysqli_fetch_assoc($result))
 		        {
 		    ?>
-		    	 <a href="product.php?name=<?php echo $row["name"]; ?>&pic=<?php echo $row["image"]; ?>&price=<?php echo $row["price"]; ?>">
+		    	 <a href="product.php?id=<?php echo $row["id"]; ?>&name=<?php echo $row["name"]; ?>&pic=<?php echo $row["image"]; ?>&price=<?php echo $row["price"]; ?>">
 		     	 <div class="col-sm">
 		        
 		          <form method="post" action="index.php?action=add&id=<?php echo $row["id"]; ?>">
@@ -286,7 +286,7 @@
 		        while($row = mysqli_fetch_assoc($result))
 		        {
 		    ?>
-		    	 <a href="product.php?name=<?php echo $row["name"]; ?>&pic=<?php echo $row["image"]; ?>&price=<?php echo $row["price"]; ?>">
+		    	 <a href="product.php?id=<?php echo $row["id"]; ?>&name=<?php echo $row["name"]; ?>&pic=<?php echo $row["image"]; ?>&price=<?php echo $row["price"]; ?>">
 		     	 <div class="col-sm">
 		        
 		          <form method="post" action="index.php?action=add&id=<?php echo $row["id"]; ?>">
