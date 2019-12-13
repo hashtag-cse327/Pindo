@@ -8,21 +8,6 @@
 ?>
 <?php include ("header.php") ?>
 
-<?php 
-	
-	if(isset($_POST["reviewBtn"])){
-		$user = $_SESSION["username"];
-		$id = $_GET["id"];
-		$text = $_POST["review"];
-		$rate = $_POST["rate"];
-
-		$sql = "INSERT INTO review (id, username, review, rating) VALUES ('$id','$user','$text','$rate')";
-
-		mysqli_query($conn, $sql);
-	}
-
-?>
-
 <head>
 	<title>Pindo | <?php echo $_GET['name']; ?> </title>
 	<link rel="stylesheet" type="text/css" href="css/productt.css">
@@ -112,7 +97,8 @@
 		
 		<h2 style="text-align: center;">Review this product</h2>
 
-		<form method="POST">
+		<form method="POST" id="myForm" action="reviewInsert.php">
+			<?php $id = $_GET["id"]; ?>
 			<div style="margin-left: 25%;">
 				Rating:<br>
 				1  <input type="radio" name="rate" value="1">
@@ -120,16 +106,24 @@
 				3  <input type="radio" name="rate" value="3">
 				4  <input type="radio" name="rate" value="4">
 				5  <input type="radio" name="rate" value="5">
+				<span style="margin-left: 5px;color: red;" id="result"></span>
 			</div>
 
-			<textarea name="review" class="form-control" placeholder="Your Review..." rows="4" style="width: 50%; margin: 2px auto;"></textarea>
+			<input type="hidden" name="id" value="<?php echo $id; ?>">
 
-			<button type="submit" name="reviewBtn"  style="margin-top: 5px; margin-left: 25%;" class="btn btn-primary">Post</button>
+			<textarea name="review" class="form-control" placeholder="Your Review..." rows="4" style="width: 50%; margin: 2px auto;" required></textarea>
+
+			<button type="submit" id="reviewBtn" style="margin-top: 5px; margin-left: 25%;" class="btn btn-primary">Post</button>
+			<br>
 			
 		</form>
 
 
 	</div>
+
+	<!-- Ajax -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="js/review.js"></script>
 </body>
 
 <?php include("footer.php") ?>
