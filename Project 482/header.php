@@ -96,9 +96,9 @@
 	        		</li>
 	      		</ul>
 	      
-	      		<form class="form-inline my-2 my-lg-0">
-	        		<input class="form-control mr-sm-2" type="search" placeholder="Search in pindo" aria-label="Search">
-	        		<button class="btn btn-outline-warning my-2 my-sm-0" type="submit" data-toggle="tooltip" data-placement="left" title=" Search Bar Under Construction">Search</button>
+	      		<form class="form-inline my-2 my-lg-0" method="POST" action="search.php">
+	        		<input class="form-control mr-sm-2" type="search" name="query" placeholder="Search your attire here" aria-label="Search">
+	        		<button class="btn btn-outline-warning my-2 my-sm-0" type="submit" name="search" data-toggle="tooltip" data-placement="left" >Search</button>
 	      		</form>
 	    	</div>
 	  	</nav>

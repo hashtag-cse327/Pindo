@@ -1,4 +1,4 @@
-<?php require_once("conn.php"); ?>
+<?php require_once("conn.php"); ?> 
 
 <!-- Inserting Selected Items to the cart -->
 <?php 
