@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Dec 13, 2019 at 08:39 PM
+-- Generation Time: Dec 16, 2019 at 11:02 AM
 -- Server version: 10.4.8-MariaDB
 -- PHP Version: 7.3.11
 
@@ -25,20 +25,6 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
--- Table structure for table `customer`
---
-
-CREATE TABLE `customer` (
-  `id` int(11) NOT NULL,
-  `name` varchar(255) NOT NULL,
-  `email` varchar(255) NOT NULL,
-  `mobile` varchar(255) NOT NULL,
-  `address` varchar(255) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
--- --------------------------------------------------------
-
---
 -- Table structure for table `iftiaz`
 --
 
@@ -46,6 +32,7 @@ CREATE TABLE `iftiaz` (
   `name` varchar(255) NOT NULL,
   `quantity` varchar(255) NOT NULL,
   `price` varchar(255) NOT NULL,
+  `image` varchar(255) NOT NULL,
   `purchased_time` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
@@ -53,11 +40,19 @@ CREATE TABLE `iftiaz` (
 -- Dumping data for table `iftiaz`
 --
 
-INSERT INTO `iftiaz` (`name`, `quantity`, `price`, `purchased_time`) VALUES
-('Light Slate Gray Georgette Lehenga For Women', '3', '5970', '10:21:pm  |  13-12-2019'),
-('Leather Casual Boat Shoe For Men - Dark Blue', '2', '4140', '10:21:pm  |  13-12-2019'),
-('Navy Blue Cotton Trouser for Men', '1', '780', '10:43:pm  |  13-12-2019'),
-('Light Beige Twill Gabardine Pant for Men', '1', '590', '10:43:pm  |  13-12-2019');
+INSERT INTO `iftiaz` (`name`, `quantity`, `price`, `image`, `purchased_time`) VALUES
+('Magenta PU Leather Close Heel for Women', '1', '1850', '', '11:16:pm  |  15-12-2019'),
+('Navy Blue Cotton Trouser for Men', '1', '780', '', '11:17:pm  |  15-12-2019'),
+('Leather Formal Shoes - Black', '1', '3000', '', '11:17:pm  |  15-12-2019'),
+('Magenta PU Leather Close Heel for Women', '1', '1850', '', '01:51:pm  |  16-12-2019'),
+('Black Artificial Leather Wedges for Women', '1', '2450', '', '01:51:pm  |  16-12-2019'),
+('Multi Color Leather Sandal For Women', '1', '1155', '', '01:51:pm  |  16-12-2019'),
+('Pack of 2 Black Cotton T-shirts for Couple', '1', '500', '', '01:51:pm  |  16-12-2019'),
+('Navy Blue Cotton Tanjim Casual Shirt for Men', '1', '1838', '', '01:51:pm  |  16-12-2019'),
+('White Synthetic Leather Magista Onda TF Sports', '1', '4500', '', '01:51:pm  |  16-12-2019'),
+('Teal and Peru Georgette Lehenga For Women', '1', '2042', '', '01:51:pm  |  16-12-2019'),
+('Olive Twill Gabardine Pant for Men', '1', '590', '', '01:51:pm  |  16-12-2019'),
+('Orange Leather High Heel Sandals for Women', '1', '3990', '', '01:51:pm  |  16-12-2019');
 
 -- --------------------------------------------------------
 
@@ -175,6 +170,31 @@ INSERT INTO `men_shoes` (`id`, `name`, `image`, `price`) VALUES
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `rahmat47`
+--
+
+CREATE TABLE `rahmat47` (
+  `name` varchar(255) NOT NULL,
+  `quantity` varchar(255) NOT NULL,
+  `price` varchar(255) NOT NULL,
+  `image` varchar(255) NOT NULL,
+  `purchased_time` varchar(255) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `rahmat47`
+--
+
+INSERT INTO `rahmat47` (`name`, `quantity`, `price`, `image`, `purchased_time`) VALUES
+('Light Beige Twill Gabardine Pant for Men', '1', '590', '', '02:29:pm  |  16-12-2019'),
+('Navy Blue Cotton Trouser for Men', '1', '780', '', '02:30:pm  |  16-12-2019'),
+('Navy Blue Cotton Trouser for Men', '1', '780', '', '02:33:pm  |  16-12-2019'),
+('Orange Leather High Heel Sandals for Women', '1', '3990', '', '03:03:pm  |  16-12-2019'),
+('Gray Phillies Joggers Trouser For Men', '10', '6000', '', '03:03:pm  |  16-12-2019');
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `review`
 --
 
@@ -190,11 +210,32 @@ CREATE TABLE `review` (
 --
 
 INSERT INTO `review` (`id`, `username`, `review`, `rating`) VALUES
-(14, 'iftiaz', 'Nice Product, I liked it.', 5),
-(53, 'iftiaz', 'Not bad....', 3),
-(53, 'iftiaz', 'Quality improved.....', 5),
-(53, 'iftiaz', 'Nice..!', 5),
-(27, 'iftiaz', 'The product is different from the picture, bad quality.\r\nthink twice before you buy this....', 2);
+(10, 'sohan69', 'Nice Product!', 5),
+(10, 'rumman', 'valo', 4),
+(10, 'rumman', 'valo na', 3),
+(47, 'rahmat47', 'Nice product, my wife loved it...', 4);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `rumman`
+--
+
+CREATE TABLE `rumman` (
+  `name` varchar(255) NOT NULL,
+  `quantity` varchar(255) NOT NULL,
+  `price` varchar(255) NOT NULL,
+  `image` varchar(255) NOT NULL,
+  `purchased_time` varchar(255) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `rumman`
+--
+
+INSERT INTO `rumman` (`name`, `quantity`, `price`, `image`, `purchased_time`) VALUES
+('Navy Blue Cotton Trouser for Men', '1', '780', '', '02:26:pm  |  16-12-2019'),
+('Brown PU Leather Flat Sandal For Women', '1', '1350', '', '02:26:pm  |  16-12-2019');
 
 -- --------------------------------------------------------
 
@@ -237,15 +278,17 @@ CREATE TABLE `users` (
   `gender` varchar(255) NOT NULL,
   `password` varchar(255) NOT NULL,
   `image` varchar(200) NOT NULL,
-  `address` varchar(255) NOT NULL
+  `address` varchar(255) NOT NULL,
+  `phone` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Dumping data for table `users`
 --
 
-INSERT INTO `users` (`username`, `fullname`, `email`, `gender`, `password`, `image`, `address`) VALUES
-('iftiaz', 'Iftiaz Ahmed', 'iftiaz.alfi@northsouth.edu', 'Male', 'password', '17972233_1678037068874821_1128503228278337463_o.jpg', '');
+INSERT INTO `users` (`username`, `fullname`, `email`, `gender`, `password`, `image`, `address`, `phone`) VALUES
+('rumman', 'Fatematuj Zahura Rumman', 'rumman22@gmail.com', 'Female', 'pass', '', '22, Dhanmondi, Dhaka - 1230', '01984563255'),
+('iftiaz', 'Iftiaz Ahmed', 'iftiaz.alfi@northsouth.edu', 'Male', 'pass', '', '', '');
 
 -- --------------------------------------------------------
 
@@ -308,12 +351,6 @@ INSERT INTO `women_shoes` (`id`, `name`, `image`, `price`) VALUES
 --
 
 --
--- Indexes for table `customer`
---
-ALTER TABLE `customer`
-  ADD PRIMARY KEY (`id`);
-
---
 -- Indexes for table `latest_collections`
 --
 ALTER TABLE `latest_collections`
@@ -358,12 +395,6 @@ ALTER TABLE `women_shoes`
 --
 -- AUTO_INCREMENT for dumped tables
 --
-
---
--- AUTO_INCREMENT for table `customer`
---
-ALTER TABLE `customer`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 
 --
 -- AUTO_INCREMENT for table `latest_collections`
