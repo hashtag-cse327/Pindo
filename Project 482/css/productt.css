@@ -28,30 +28,12 @@ body{
   text-align: center;
   font-size: 30px;
 }
-.btnSubmit{
-    font-weight: 600;
-    width: 23%;
-    color: white;
-    background-color: #e05614;
-    border: none;
-    border-radius: 1.5rem;
-    padding:2%;
-    margin: 50px;
-    margin-right: 10px;
-    font-size: 20px;
-}
-
-.btnSubmit:hover{
-  font-size: 20px;
-  font-weight: 900;
-  background: #e05614b8;  
-}
 
 .btnSubmit1{
     font-weight: 600;
-    width: 20%;
+    width: 30%;
     color: white;
-    background-color: #117a8b;
+    background-color: #e05614;
     border: none;
     border-radius: 1.5rem;
     padding:2%;
@@ -63,5 +45,5 @@ body{
 .btnSubmit1:hover{
   font-size: 20px;
   font-weight: 900;
-  background: #117a8bd9;  
+  background: #e05614b8;  
 }

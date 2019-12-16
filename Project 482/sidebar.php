@@ -8,6 +8,8 @@
 	<link rel="stylesheet" type="text/css" href="css/sidebar.css">
 </head>
 <body>
+
+	<?php if ($_SESSION["authen"]){ ?>
 	<!-- SideBar Starts -->
 
  	 <div class="sidebar" id="mySidebar">
@@ -54,6 +56,7 @@
  	 </div>
 
  	 <!-- SideBar 2 Ends -->
+ 	<?php } ?>
 
  	 <script>
 		function openNav() {

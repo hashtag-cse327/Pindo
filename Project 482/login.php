@@ -16,13 +16,15 @@
         $_SESSION["username"] = $user;
         $_SESSION["pass"] = $pass;
 
-        $sql = "SELECT fullname, email FROM users WHERE username='$user' AND password='$pass'";
+        $sql = "SELECT fullname, email, address, phone FROM users WHERE username='$user' AND password='$pass'";
         $result = mysqli_query($conn, $sql);
 
         if (mysqli_num_rows($result) > 0) {
             while($row = mysqli_fetch_assoc($result)) {
                 $_SESSION["fn"] = $row["fullname"];
                 $_SESSION["em"] = $row["email"];
+                $_SESSION["address"] = $row["address"];
+                $_SESSION["phone"] = $row["phone"];
                 $_SESSION["authen"] = True;
                 $_SESSION["cart_no"] = 0;
             }
@@ -76,13 +78,14 @@
                         <img src="images/logo.png" alt=""/>
                     </div>
                     <h1>Sign Up</h1>
-                        <form name="signup_form" method="POST" action="/Pindo/login.php" onsubmit="return signup_validate()">
+                        <form name="signup_form" id="signup_form" method="POST" action="/Pindo/login.php" onsubmit="return signup_validate()">
                         	Full Name:<br>
                         	<input type="text" class="form-control" name="f_name" placeholder="Iftiaz Ahmed"><br>
                         	Email:<br>
                         	<input type="email" class="form-control" name="email" placeholder="example@email.com"><br>
                         	Username:<br>
                         	<input type="text" class="form-control" name="u_name" placeholder="iftiaz_ahmed"><br>
+                            <span style="color: red;" id="usr"></span>
                         	Gender:<br>
                         	<select name="gender" class="form-control">
 							  <option value="0">Choose..</option>
@@ -94,7 +97,7 @@
                         	<input type="password" class="form-control" name="password1"><br>
                         	Re-Enter Password:<br>
                         	<input type="password" class="form-control" name="password2"><br><br>
-                        	<button type="signup" class="btnSubmit" name="signup">Sign Up</button>
+                        	<button type="signup" class="btnSubmit" id="signup" name="signup">Sign Up</button>
                         </form>
                 </div>
             </div>
@@ -115,24 +118,43 @@
         $gender = $_POST['gender'];
         $pass   = $_POST['password1'];
 
-        $sql = "INSERT INTO users (username, fullname, email, gender, password) VALUES ('$user', '$fn', '$email', '$gender', '$pass')";
+        $sql = "SELECT username FROM users";
+        $result = mysqli_query($conn, $sql);
 
-        if (mysqli_query($conn, $sql)) {
-            $message = "Sign up successfull!";
-            echo "<script type='text/javascript'>alert('$message');</script>";
-        } else {
-            $message = "Error: " . $sql . "<br/>" . mysqli_error($conn);
-            echo "<script type='text/javascript'>alert('$message');</script>";
+        if (mysqli_num_rows($result) > 0) {
+            while($row = mysqli_fetch_assoc($result)) {
+                if($user == $row["username"]){
+                    $u = $row["username"];
+                } else {
+                    $u = "";
+                }
+           }
         }
 
-        $sql = "CREATE TABLE $user (
-            name VARCHAR(255) NOT NULL,
-            quantity VARCHAR(255) NOT NULL,
-            price VARCHAR(255) NOT NULL,
-            image VARCHAR(255) NOT NULL,
-            purchased_time VARCHAR(255) NOT NULL
-            )";
-        mysqli_query($conn, $sql);
+        if($user == $u){
+             $message = "Username already taken, try different one!";
+             echo "<script type='text/javascript'>alert('$message');</script>";
+        
+        } else {
+                    $sql = "INSERT INTO users (username, fullname, email, gender, password) VALUES ('$user', '$fn', '$email', '$gender', '$pass')";
+
+                    if (mysqli_query($conn, $sql)) {
+                        $message = "Sign up successfull!";
+                        echo "<script type='text/javascript'>alert('$message');</script>";
+                    } else {
+                        $message = "Error: " . $sql . "<br/>" . mysqli_error($conn);
+                        echo "<script type='text/javascript'>alert('$message');</script>";
+                    }
+
+                    $sql = "CREATE TABLE $user (
+                        name VARCHAR(255) NOT NULL,
+                        quantity VARCHAR(255) NOT NULL,
+                        price VARCHAR(255) NOT NULL,
+                        image VARCHAR(255) NOT NULL,
+                        purchased_time VARCHAR(255) NOT NULL
+                        )";
+                    mysqli_query($conn, $sql);
+        }
 
     }
 ?>

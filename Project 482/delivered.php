@@ -11,7 +11,8 @@
 <!DOCTYPE html>
 <html>
 <body>
-    <h1 style="margin-top: 200px;color: red;text-align: center;">Items will be delivered soon to your given address!</h1>
+    <?php if ($_SESSION["authen"]){ ?>
+    <h1 style="margin-top: 200px;color: red;text-align: center;">Items will be soon delivered to <?php $addrs = $_SESSION["address"]; echo "<br>".$addrs; ?> </h1>
 </body>
 </html>
 
@@ -34,6 +35,12 @@
     }
 
     header("refresh:5; url=index.php");
+    }
+else {
+  ?>
+  <h1 style="margin-top: 200px;color: red;text-align: center;"> You are not logged in! </h1>
+  <?php
+  }
  ?>
 
  <?php include("footer.php") ?>

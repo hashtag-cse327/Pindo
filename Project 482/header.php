@@ -18,6 +18,14 @@
     <!-- Style CSS -->
     <link rel="stylesheet" type="text/css" href="css/style.css">
 
+    <script>
+    	$(document).ready(function(){
+			setInterval(function(){
+				$('#demo1').load('header.php')
+			}, 1000);
+		});
+    </script>
+
 </head>
 <body>
 	<!--Header Starts -->

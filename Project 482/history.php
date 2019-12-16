@@ -7,7 +7,7 @@
 	}
 ?>
 <?php include("header.php") ?>
-
+<?php if ($_SESSION["authen"]){ ?>
 <head>
 	<title>History</title>
 
@@ -31,7 +31,7 @@
 
 			<?php 
 				$user = $_SESSION["username"];
-				$sql = "SELECT * FROM $user ORDER BY purchased_time DESC";
+				$sql = "SELECT * FROM $user";
         		$result = mysqli_query($conn, $sql);
 
         		if (mysqli_num_rows($result) > 0) {
@@ -59,7 +59,14 @@
 		<div style="margin-top: 50px;"></div>
 	</section>
 
-
+	<?php 
+	}
+else {
+  ?>
+  <h1 style="margin-top: 200px;color: red;text-align: center;"> You are not logged in! </h1>
+  <?php
+  }
+   ?>
 	
 </body>
 

@@ -1,4 +1,7 @@
-<?php require_once("conn.php"); ?>
+<?php 
+ob_start();
+require_once("conn.php"); 
+?>
 <?php 
 
 	if(isset($_POST['u1'])){
@@ -64,6 +67,22 @@
 ?>
 
 <?php 
+	if(isset($_POST['mob'])){
+		$mob = $_POST['mobile'];
+		$u = $_SESSION["username"];
+		$sql = "UPDATE users SET phone='$mob' WHERE username='$u'";
+		if (mysqli_query($conn, $sql)) {
+			$_SESSION["phone"] = $_POST['mobile'];
+			$message = "Number updated successfully.";
+			echo "<script type='text/javascript'>alert('$message');</script>";
+		} else {
+			$message = "Error: " . $sql . "<br/>" . mysqli_error($conn);
+			echo "<script type='text/javascript'>alert('$message');</script>";
+		}
+	}
+?>
+
+<?php 
 	
 	if(isset($_POST['u4'])){
 		// Get image name
@@ -93,6 +112,65 @@
 
 ?>
 
+<?php 
+	
+	if(isset($_POST["address"])){
+		$h = $_POST["house"];
+		$a = $_POST["area"];
+		$d = $_POST["district"];
+		$p = $_POST["pcode"];
+
+		$addrs = "House: " . $h . ", " . $a . ", " . $d . " - " . $p;
+
+		$u = $_SESSION["username"];
+
+		$sql = "UPDATE users SET address='$addrs' WHERE username='$u'";
+
+		if (mysqli_query($conn, $sql)) {
+			$_SESSION["address"] = $addrs;
+			$message = "Address updated!";
+			echo "<script type='text/javascript'>alert('$message');</script>";
+		} else {
+			$message = "Error: " . $sql . "<br/>" . mysqli_error($conn);
+			echo "<script type='text/javascript'>alert('$message');</script>";
+		}
+	}
+
+
+?>
+
+<?php 
+	
+	if(isset($_POST["del"])){
+
+		$pass = $_POST["pass"];
+		$p = $_SESSION["pass"];
+		$u = $_SESSION["username"];
+
+		if($pass == $p){
+
+			$sql = "DELETE FROM users WHERE username='$u'";
+
+			if (mysqli_query($conn, $sql)) {
+            	session_destroy();
+ 	 			session_start();
+ 	 			$_SESSION["authen"] = False;
+ 	 			header("Location: deleted.php");
+ 	 			ob_end_flush();
+        	}
+
+		} else{
+			$message = "Password didn't match!";
+            echo "<script type='text/javascript'>alert('$message');</script>";
+		}
+	}
+
+
+
+
+?>
+
+
 
 
 <?php include("header.php") ?>
@@ -111,6 +189,7 @@
 	<title>Pindo | Settings</title>
 </head>
 <body class="parallax">
+	<?php if ($_SESSION["authen"]){ ?>
 	<div class="container" style = " margin-top: 130px;"> 
 		<h1>Account Settings</h1>
 		<hr>
@@ -126,6 +205,26 @@
 				Enter New Email: 
 				<input type="text" name="email" required> 
 				<button type="submit" name="u3">Update</button>
+			</form>
+
+			<h4><b> Mobile: </b><?php echo $_SESSION["phone"]; ?> <button style="border: none; font-size: 20px;background: #f4e9e9;text-decoration: underline;color: blue;padding-left: 10px;" onclick="toggler('mob')">[+edit]</button> </h4>
+			<form method="POST" id="mob" style="display: none;">
+				Enter your mobile number: 
+				<input type="text" name="mobile" required> 
+				<button type="submit" name="mob">Add</button>
+			</form>
+
+			<p style="font-size: 25px; margin-top: 10px; margin-bottom: 0px;" ><b>Set your address</b>
+			<button style="border: none; background: #f4e9e9;text-decoration: underline;color: blue; font-size: 20px; padding-left: 10px;" onclick="toggler('a')">[+edit]</button> </p>
+
+			<h4> <?php echo $_SESSION["address"]; ?> </h4>
+
+			<form method="POST" id="a" style="display: none;"> 
+				<input  type="text" name="house" placeholder="House No:" required> <br>
+				<input  type="text" name="area" placeholder="Road and Area: " required><br> 
+				<input  type="text" name="district" placeholder="District:" required><br> 
+				<input  type="text" name="pcode" placeholder="Postal Code:" required><br>
+				<button type="submit" name="address">Set</button>
 			</form>
 
 			<p style="font-size: 25px; margin-top: 10px; margin-bottom: 0px;" ><b>Change Password</b></p>
@@ -154,6 +253,15 @@
 
 			<hr>
 
+			<p style="font-size: 25px; margin-top: 10px; margin-bottom: 0px;" >
+			<button style="border: none; background: #f4e9e9;color: #c10a0a; font-size: 20px; padding-left: 8px;" onclick="toggler('del')">Delete your account permanently from Pindo.com</button>
+			<form method="POST" id="del" style="display: none; margin-bottom: 50px;">
+				Enter password to continue:
+				<input  type="password" name="pass" required>
+				<button type="submit" name="del">Delete</button>
+			</form>
+			</p>
+
 
 
 		</div>
@@ -161,6 +269,14 @@
 
 	</div>
 
+	<?php 
+	}
+else {
+  ?>
+  <h1 style="margin-top: 200px;color: red;text-align: center;"> You are not logged in! </h1>
+  <?php
+  }
+   ?>
 	
 
 	<script type="text/javascript">
@@ -181,6 +297,7 @@
 		  	}
       	}
     </script> 
+
 
 </body>
 </html>

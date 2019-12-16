@@ -31,12 +31,26 @@
 			<div class="col-md-7 sec-back text-product">
 				<strong style= "text-align: top-left;color: #1692a9;"> <?php echo $_GET['name'] ?> </strong><br>
 				<hr>
+				<form method="post" action="cartInsert.php?action=add&id=<?php echo $_GET["id"]; ?>">
 				<span>Quantity: </span>
 				<input type="number" style="width: 12%;" name="quantity" value="1"><br>
 				<hr>
 				<span style="color: red; font-weight: 900;font-size: 30px;">৳ <?php echo $_GET['price']; ?></span><br>
-				<button type= "submit" class = "btnSubmit">Add to cart</button>
-				<button type= "submit" class = "btnSubmit1">Buy Now</button>
+
+		        <input type="hidden" name="hidden_name" value="<?php echo $_GET["name"]; ?>" />
+              	<input type="hidden" name="hidden_price" value="<?php echo $_GET["price"]; ?>" />
+              	<input type="hidden" name="hidden_img" value="<?php echo $_GET["pic"]; ?>" />
+              	<?php if ($_SESSION["authen"]){ ?>
+				<button type= "submit" class = "btnSubmit1" name="add_to_cart">Buy Now</button>
+				<?php 
+				} else{
+				?>
+					<h3 style="color: green; margin-top: 50px;"><?php echo "Login In to continue!"; ?></h3>
+					<button type= "submit" class = "btnSubmit1">Buy Now</button>
+					
+				<?php
+				} ?>
+		        </form>
 			</div>
 
 		</div>
@@ -50,7 +64,8 @@
 			
 		</div>
 		
-		
+		<?php 
+		if ($_SESSION["authen"]){ ?>
 		<h2 style="text-align: center;">Review this product</h2>
 
 		<form method="POST" id="myForm" action="reviewInsert.php">
@@ -73,6 +88,7 @@
 			<br>
 			
 		</form>
+		<?php } ?>
 
 
 	</div>

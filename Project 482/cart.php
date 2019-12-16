@@ -14,6 +14,11 @@
 </head>
 <body>
 
+  <?php 
+  if ($_SESSION["authen"]){
+  
+  ?>
+  
 	<!--Cart Section Starts -->
   <div class="cart" id="cart">
     <div class="container" style="background-color: #ffffffb0; padding: 0;margin-top: 100px;">
@@ -56,7 +61,29 @@
             <tr>
               <td colspan="3" align="right">Total</td>
               <td colspan="2" align="right" class="text-danger">৳ <?php echo number_format($total+$delivery, 2); ?></td>
-              <td><form method="post" action="delivered.php"><button class="btn btn-primary" type="submit" name="checkout">Checkout</button></form></td>
+              <td>
+                <?php 
+                $addrs = $_SESSION["address"];
+                $mob = $_SESSION["phone"];
+                if($addrs == NULL){
+                ?>
+                <form action="settings.php"><button class="btn btn-primary">Add your address to continue</button></form>
+                <?php
+                    if($mob == NULL){
+                  }
+                } else {
+                  if($mob == NULL){
+                ?>
+                <form action="settings.php"><button class="btn btn-primary">Add your phone number to continue</button></form>
+                <?php
+                  } else{
+                ?>
+                <form method="post" action="delivered.php"><button class="btn btn-primary" type="submit" name="checkout">Checkout</button></form>
+                <?php
+                 }
+                }
+                ?>
+              </td>
             </tr>
             <?php
             }
@@ -64,7 +91,14 @@
           </table>  
   </div>
   </div>
-
+  <?php
+  } 
+  else {
+  ?>
+  <h1 style="margin-top: 200px;color: red;text-align: center;"> You are not logged in! </h1>
+  <?php
+  }
+  ?>
 
 </body>
 </html>

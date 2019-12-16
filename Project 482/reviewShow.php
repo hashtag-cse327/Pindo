@@ -30,7 +30,7 @@
 	    ?>
 	    	<div style="padding-left: 10%;">
 			<h4><i style="color: #fd7514;font-size: 50px;" class="fas fa-star"></i><span style="color: #ffb307;font-size: 50px;"> 0</span><b>/5</b> </h4>
-			<h6 style="padding-left: 8%;"><b>*<?php echo $count; ?> users rated</b></h6>
+			<h6 style="padding-left: 8%;"><b>*<?php echo $count; ?> user rated</b></h6>
 			</div>
 	    <?php	
 	    }

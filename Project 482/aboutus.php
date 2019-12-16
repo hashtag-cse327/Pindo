@@ -1,12 +1,12 @@
 <?php require_once("conn.php"); ?>
-<?php include("header.php") ?>
 <?php 
-  if (isset($_POST["ur_name"])==""){
+  if ($_SESSION["authen"]){
+    include("sidebar.php");
   } 
   else {
-    include("sidebar.php");
   }
 ?>
+<?php include("header.php") ?>
 
 <!DOCTYPE html>
 <html lang="en">
