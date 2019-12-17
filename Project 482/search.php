@@ -13,16 +13,21 @@
 <head>
 	<title>Pindo | Search Results</title>
 	<style type="text/css">
-		.result p{
+		.list{
 			font-size: 20px;
 			color: #0062cc;
 			font-weight: 600;
+            border: 2px solid black;
+            padding: 10px;
+            margin: 10px;
+            width: 50%;
+            text-align: center;
 		}
 	</style>
 </head>
 <body style="background: #f4e9e9;">
 	<h1 style="margin-top: 150px;margin-bottom: 80px;text-align: center;">Search Results</h1>
-    <div class="result" style="margin-left: 20%;"> 
+    <div class="result" style="margin-left: 30%;margin-bottom: 50px;"> 
     	
     <?php
     $query = $_POST['query']; 
@@ -34,15 +39,15 @@
         // changes characters used in html to their equivalents, for example: < to &gt;
         $query = mysqli_real_escape_string($conn,$query);
         // makes sure nobody uses SQL injection
-        $sql = "SELECT name FROM men_shoes
+        $sql = "SELECT name,id,image,price FROM men_shoes
             WHERE (`name` LIKE '%".$query."%')" or die(mysql_error());
         $raw_results = mysqli_query($conn,$sql);
         if(mysqli_num_rows($raw_results) > 0){ // if one or more rows are returned do following
-            while($results = mysqli_fetch_array($raw_results)){
+            while($row = mysqli_fetch_array($raw_results)){
             // $results = mysql_fetch_array($raw_results) puts data from database into array, while it's valid it does the loop
              ?>
-             	<a href="shoes.php">
-                <p><i class="fas fa-hand-point-right"></i><?php echo $results["name"]; ?></p>
+             	<a href="product.php?id=<?php echo $row["id"]; ?>&name=<?php echo $row["name"]; ?>&pic=<?php echo $row["image"]; ?>&price=<?php echo $row["price"]; ?>">
+                <div class="list"><i class="fas fa-hand-point-right"></i><?php echo $row["name"]; ?></div>
              	</a>
              <?php
             }
@@ -60,15 +65,15 @@
         // changes characters used in html to their equivalents, for example: < to &gt;
         $query = mysqli_real_escape_string($conn,$query);
         // makes sure nobody uses SQL injection
-        $sql = "SELECT name FROM men_pants
+        $sql = "SELECT name,id,image,price FROM men_pants
             WHERE (`name` LIKE '%".$query."%')" or die(mysql_error());
         $raw_results = mysqli_query($conn,$sql);
         if(mysqli_num_rows($raw_results) > 0){ // if one or more rows are returned do following
-            while($results = mysqli_fetch_array($raw_results)){
+            while($row = mysqli_fetch_array($raw_results)){
             // $results = mysql_fetch_array($raw_results) puts data from database into array, while it's valid it does the loop
              ?>
-             	<a href="pants.php">
-                <p><i class="fas fa-hand-point-right"></i><?php echo $results["name"]; ?></p>
+             	<a href="product.php?id=<?php echo $row["id"]; ?>&name=<?php echo $row["name"]; ?>&pic=<?php echo $row["image"]; ?>&price=<?php echo $row["price"]; ?>">
+                <div class="list"><i class="fas fa-hand-point-right"></i><?php echo $row["name"]; ?></div>
              	</a>
              <?php
             }
@@ -86,15 +91,15 @@
         // changes characters used in html to their equivalents, for example: < to &gt;
         $query = mysqli_real_escape_string($conn,$query);
         // makes sure nobody uses SQL injection
-        $sql = "SELECT name FROM men_shirt
+        $sql = "SELECT name,id,image,price FROM men_shirt
             WHERE (`name` LIKE '%".$query."%')" or die(mysql_error());
         $raw_results = mysqli_query($conn,$sql);
         if(mysqli_num_rows($raw_results) > 0){ // if one or more rows are returned do following
-            while($results = mysqli_fetch_array($raw_results)){
+            while($row = mysqli_fetch_array($raw_results)){
             // $results = mysql_fetch_array($raw_results) puts data from database into array, while it's valid it does the loop
              ?>
-             	<a href="shirts.php">
-                <p><i class="fas fa-hand-point-right"></i><?php echo $results["name"]; ?></p>
+             	<a href="product.php?id=<?php echo $row["id"]; ?>&name=<?php echo $row["name"]; ?>&pic=<?php echo $row["image"]; ?>&price=<?php echo $row["price"]; ?>">
+                <div class="list"><i class="fas fa-hand-point-right"></i><?php echo $row["name"]; ?></div>
              	</a>
              <?php
             }
@@ -112,15 +117,15 @@
         // changes characters used in html to their equivalents, for example: < to &gt;
         $query = mysqli_real_escape_string($conn,$query);
         // makes sure nobody uses SQL injection
-        $sql = "SELECT name FROM wedding_wear
+        $sql = "SELECT name,id,image,price FROM wedding_wear
             WHERE (`name` LIKE '%".$query."%')" or die(mysql_error());
         $raw_results = mysqli_query($conn,$sql);
         if(mysqli_num_rows($raw_results) > 0){ // if one or more rows are returned do following
-            while($results = mysqli_fetch_array($raw_results)){
+            while($row = mysqli_fetch_array($raw_results)){
             // $results = mysql_fetch_array($raw_results) puts data from database into array, while it's valid it does the loop
              ?>
-             	<a href="weddingwear.php">
-                <p><i class="fas fa-hand-point-right"></i><?php echo $results["name"]; ?></p>
+             	<a href="product.php?id=<?php echo $row["id"]; ?>&name=<?php echo $row["name"]; ?>&pic=<?php echo $row["image"]; ?>&price=<?php echo $row["price"]; ?>">
+                <div class="list"><i class="fas fa-hand-point-right"></i><?php echo $row["name"]; ?></div>
              	</a>
              <?php
             }
@@ -138,15 +143,15 @@
         // changes characters used in html to their equivalents, for example: < to &gt;
         $query = mysqli_real_escape_string($conn,$query);
         // makes sure nobody uses SQL injection
-        $sql = "SELECT name FROM sarees
+        $sql = "SELECT name,id,image,price FROM sarees
             WHERE (`name` LIKE '%".$query."%')" or die(mysql_error());
         $raw_results = mysqli_query($conn,$sql);
         if(mysqli_num_rows($raw_results) > 0){ // if one or more rows are returned do following
-            while($results = mysqli_fetch_array($raw_results)){
+            while($row = mysqli_fetch_array($raw_results)){
             // $results = mysql_fetch_array($raw_results) puts data from database into array, while it's valid it does the loop
              ?>
-             	<a href="sarees.php">
-                <p><i class="fas fa-hand-point-right"></i><?php echo $results["name"]; ?></p>
+             	<a href="product.php?id=<?php echo $row["id"]; ?>&name=<?php echo $row["name"]; ?>&pic=<?php echo $row["image"]; ?>&price=<?php echo $row["price"]; ?>">
+               <div class="list"><i class="fas fa-hand-point-right"></i><?php echo $row["name"]; ?></div>
              	</a>
              <?php
             }
@@ -164,15 +169,15 @@
         // changes characters used in html to their equivalents, for example: < to &gt;
         $query = mysqli_real_escape_string($conn,$query);
         // makes sure nobody uses SQL injection
-        $sql = "SELECT name FROM women_shoes
+        $sql = "SELECT name,id,image,price FROM women_shoes
             WHERE (`name` LIKE '%".$query."%')" or die(mysql_error());
         $raw_results = mysqli_query($conn,$sql);
         if(mysqli_num_rows($raw_results) > 0){ // if one or more rows are returned do following
-            while($results = mysqli_fetch_array($raw_results)){
+            while($row = mysqli_fetch_array($raw_results)){
             // $results = mysql_fetch_array($raw_results) puts data from database into array, while it's valid it does the loop
              ?>
-             	<a href="sandals.php">
-                <p><i class="fas fa-hand-point-right"></i><?php echo $results["name"]; ?></p>
+             	<a href="product.php?id=<?php echo $row["id"]; ?>&name=<?php echo $row["name"]; ?>&pic=<?php echo $row["image"]; ?>&price=<?php echo $row["price"]; ?>">
+                <div class="list"><i class="fas fa-hand-point-right"></i><?php echo $row["name"]; ?></div>
              	</a>
              <?php
             }
