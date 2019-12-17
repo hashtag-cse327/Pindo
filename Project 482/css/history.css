@@ -32,3 +32,15 @@ td{
 	padding: 10px;
 	box-shadow: 5px 5px 10px black;
 }
+
+@media only screen and (max-width: 1050px){
+    table{
+    	margin: 10px 100px;
+    }
+}
+
+@media only screen and (max-width: 475px){
+    table{
+    	margin: 10px 80px;
+    }
+}

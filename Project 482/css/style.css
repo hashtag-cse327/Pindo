@@ -206,6 +206,8 @@ header img {
 }
 
 .card{
+  width: 20rem;
+  margin: 10px;
   margin-bottom: 25px;
   text-align: center;
 }
@@ -263,4 +265,25 @@ header img {
 .setting button:hover{
   background: #d1450ad1;
   border: 1px solid #d1450ad1;
+}
+
+@media only screen and (max-width: 790px){
+  .col-sm{
+    max-width: 50%;
+  }
+}
+
+@media only screen and (max-width: 770px){
+  .card{
+    width: 15rem;
+    margin: 6px; 
+  }
+}
+
+@media only screen and (max-width: 616px){
+  .card{
+    width: 10rem;
+    margin-left: 30px;
+    display: block; 
+  }
 }

@@ -1,4 +1,4 @@
-<?php require_once("conn.php"); ?> 
+<?php require_once("conn.php"); ?>
 
 <!-- Inserting Selected Items to the cart -->
 <?php 
@@ -122,7 +122,7 @@
 		     	 <div class="col-sm">
 		        
 		          <form method="post" action="index.php?action=add&id=<?php echo $row["id"]; ?>">
-		            <div class="card card-body" style="width: 20rem; margin: 10px;">
+		            <div class="card card-body" style="">
 		              <img class="card-img-top img-responsive" src="images/<?php echo $row["image"]; ?>" /><br />
 
 		              <h4 class="text-info"><?php echo $row["name"]; ?></h4>
@@ -156,7 +156,7 @@
 		     	 <div class="col-sm">
 		        
 		          <form method="post" action="index.php?action=add&id=<?php echo $row["id"]; ?>">
-		            <div class="card card-body" style="width: 20rem; margin: 10px;">
+		            <div class="card card-body" style="">
 		              <img class="card-img-top img-responsive" src="images/<?php echo $row["image"]; ?>" /><br />
 
 		              <h4 class="text-info"><?php echo $row["name"]; ?></h4>
@@ -190,7 +190,7 @@
 		     	 <div class="col-sm">
 		        
 		          <form method="post" action="index.php?action=add&id=<?php echo $row["id"]; ?>">
-		            <div class="card card-body" style="width: 20rem; margin: 10px;">
+		            <div class="card card-body" style="">
 		              <img class="card-img-top img-responsive" src="images/<?php echo $row["image"]; ?>" /><br />
 
 		              <h4 class="text-info"><?php echo $row["name"]; ?></h4>
@@ -223,7 +223,7 @@
 		     	 <div class="col-sm">
 		        
 		          <form method="post" action="index.php?action=add&id=<?php echo $row["id"]; ?>">
-		            <div class="card card-body" style="width: 20rem; margin: 10px;">
+		            <div class="card card-body" style="">
 		              <img class="card-img-top img-responsive" src="images/<?php echo $row["image"]; ?>" /><br />
 
 		              <h4 class="text-info"><?php echo $row["name"]; ?></h4>
@@ -257,7 +257,7 @@
 		     	 <div class="col-sm">
 		        
 		          <form method="post" action="index.php?action=add&id=<?php echo $row["id"]; ?>">
-		            <div class="card card-body" style="width: 20rem; margin: 10px;">
+		            <div class="card card-body" style="">
 		              <img class="card-img-top img-responsive" src="images/<?php echo $row["image"]; ?>" /><br />
 
 		              <h4 class="text-info"><?php echo $row["name"]; ?></h4>
@@ -291,7 +291,7 @@
 		     	 <div class="col-sm">
 		        
 		          <form method="post" action="index.php?action=add&id=<?php echo $row["id"]; ?>">
-		            <div class="card card-body" style="width: 20rem; margin: 10px;">
+		            <div class="card card-body" style="">
 		              <img class="card-img-top img-responsive" src="images/<?php echo $row["image"]; ?>" /><br />
 
 		              <h4 class="text-info"><?php echo $row["name"]; ?></h4>

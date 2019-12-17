@@ -12,7 +12,7 @@
 <html>
 <body>
     <?php if ($_SESSION["authen"]){ ?>
-    <h1 style="margin-top: 200px;color: red;text-align: center;">Items will be soon delivered to <?php $addrs = $_SESSION["address"]; echo "<br>".$addrs; ?> </h1>
+    <h3 style="margin-top: 200px;color: red;text-align: center;">Items will be soon delivered to <?php $addrs = $_SESSION["address"]; echo "<br>".$addrs; ?> </h3>
 </body>
 </html>
 
