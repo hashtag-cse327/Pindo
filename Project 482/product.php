@@ -11,13 +11,6 @@
 <head>
 	<title>Pindo | <?php echo $_GET['name']; ?> </title>
 	<link rel="stylesheet" type="text/css" href="css/productt.css">
-	<script>
-    	$(document).ready(function(){
-			setInterval(function(){
-				$('#show').load('reviewShow.php')
-			}, 3000);
-		});
-    </script>
 </head>
 
 <body>
@@ -96,6 +89,13 @@
 	<!-- Ajax -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <script src="js/review.js"></script>
+    <script>
+    	$(document).ready(function(){
+			setInterval(function(){
+				$('#show').load('reviewShow.php')
+			}, 1000);
+		});
+    </script>
 </body>
 
 <?php include("footer.php") ?>
