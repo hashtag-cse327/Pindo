@@ -131,10 +131,14 @@
            }
         }
 
+
         if($user == $u){
              $message = "Username already taken, try different one!";
              echo "<script type='text/javascript'>alert('$message');</script>";
         
+        } else if(strlen($pass)<8){
+             $message = "Password should be minimum 8 characters";
+             echo "<script type='text/javascript'>alert('$message');</script>";
         } else {
                     $sql = "INSERT INTO users (username, fullname, email, gender, password) VALUES ('$user', '$fn', '$email', '$gender', '$pass')";
 

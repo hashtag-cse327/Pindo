@@ -15,7 +15,7 @@
     	$(document).ready(function(){
 			setInterval(function(){
 				$('#show').load('reviewShow.php')
-			}, 500);
+			}, 3000);
 		});
     </script>
 </head>
